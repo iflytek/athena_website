@@ -9,7 +9,7 @@ const config = {
   title: 'AthenaServing Doc',
   tagline: 'An Opensource AI model serving framework with high performance, flexible loading mechanism...',
   url: 'https://xfyun.github.io',
-  baseUrl: '/',
+  baseUrl: ' /athena_website',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/brand.png',
