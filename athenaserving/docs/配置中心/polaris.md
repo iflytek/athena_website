@@ -59,7 +59,7 @@ sidebar_label: 介绍
 
 - **Install**
 
-  `You can get from `[install.md](img/install)
+  `You can get from `[install.md](install.md)
 
 
 - **SDK**[supported]

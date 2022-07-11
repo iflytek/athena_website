@@ -33,13 +33,13 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          lastVersion: 'current',
-          versions: {
-            current: {
-            label: 'next',
-            path: 'current',
-            },
-          },
+          // lastVersion: 'current',
+          // versions: {
+          //   current: {
+          //   label: 'next',
+          //   path: 'current',
+          //   },
+          // },
           path: "docs",
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -77,12 +77,12 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-        {
-          type: 'docsVersionDropdown',
-          position: 'right',
-          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-          dropdownActiveClassDisabled: true,
-        },
+        // {
+        //   type: 'docsVersionDropdown',
+        //   position: 'right',
+        //   dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+        //   dropdownActiveClassDisabled: true,
+        // },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/xfyun/aiges',
@@ -99,7 +99,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/intro',
+                to: '/docs/介绍',
               },
             ],
           },

@@ -4,33 +4,12 @@ sidebar_label: Python调试工具
 
 ---
 
-# Create a Blog Post
+# Python Ase Kit
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
+[README.md](https://github.com/xfyun/aiges_python/blob/master/README.md)
 
-## Create your first Post
+# V2设计
 
-Create a file at `blog/2021-02-28-greetings.md`:
+[doc](https://github.com/xfyun/aiges/blob/master/doc/design/wrapper_interface.md)
 
-```md title="blog/2021-02-28-greetings.md"
----
-slug: greetings
-title: Greetings!
-authors:
-  - name: Joel Marcey
-    title: Co-creator of Docusaurus 1
-    url: https://github.com/JoelMarcey
-    image_url: https://github.com/JoelMarcey.png
-  - name: Sébastien Lorber
-    title: Docusaurus maintainer
-    url: https://sebastienlorber.com
-    image_url: https://github.com/slorber.png
-tags: [greetings]
----
-
-Congratulations, you have made your first post!
-
-Feel free to play around and edit this post as much you like.
-```
-
-A new blog post is now available at `http://localhost:3000/blog/greetings`.
+[code](https://github.com/xfyun/aiges_python/tree/master/aiges_python/v2)
