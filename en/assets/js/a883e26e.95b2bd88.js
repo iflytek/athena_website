@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkathenaserving=self.webpackChunkathenaserving||[]).push([[51],{9880:e=>{e.exports=JSON.parse('{"permalink":"/athena_website/en/blog/tags/docusaurus","page":1,"postsPerPage":10,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
