@@ -8,28 +8,25 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        无需关注底层基础设施及服务化相关的开发和运维，可高效、安全、自主可控地对AI引擎进行部署、升级、扩缩、监控和运营
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Focus on AI Algorithm Engineer',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        专为A.I.算法工程师打造的无服务、全托管式A.I.引擎平台. 更多详情,参阅<code>docs</code> directory.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Stable and Reliable',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        日亿级PV的打磨，云原生架构与SRE双轮驱动，系统可用性99.99%
       </>
     ),
   },
