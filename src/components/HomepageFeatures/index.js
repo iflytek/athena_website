@@ -8,7 +8,10 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        无需关注底层基础设施及服务化相关的开发和运维，可高效、安全、自主可控地对AI引擎进行部署、升级、扩缩、监控和运营
+        There is no need to pay attention to the development and operation and maintenance of
+        the underlying infrastructure and service-oriented, and the AI ​​engine can be deployed, 
+        upgraded, scaled, monitored and operated in an efficient, safe, autonomous and
+        controllable manner
       </>
     ),
   },
@@ -17,7 +20,8 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        专为A.I.算法工程师打造的无服务、全托管式A.I.引擎平台. 更多详情,参阅<code>docs</code> directory.
+        A Serverless, fully managed A.I. engine platform for A.I. algorithm engineers. 
+        For more details, see<code>docs</code> directory.
       </>
     ),
   },
@@ -26,7 +30,8 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        日亿级PV的打磨，云原生架构与SRE双轮驱动，系统可用性99.99%
+        Polishing of daily billion-level PV, cloud native architecture and SRE dual-wheel drive,
+        system availability 99.99%
       </>
     ),
   },
