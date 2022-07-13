@@ -1,0 +1,15 @@
+{
+  "title": "加载器",
+  "slug": "/category/加载器",
+  "permalink": "/athena_website/docs/category/加载器",
+  "navigation": {
+    "previous": {
+      "title": "介绍",
+      "permalink": "/athena_website/docs/介绍"
+    },
+    "next": {
+      "title": "什么是加载器，什么是引擎",
+      "permalink": "/athena_website/docs/加载器/概念"
+    }
+  }
+}

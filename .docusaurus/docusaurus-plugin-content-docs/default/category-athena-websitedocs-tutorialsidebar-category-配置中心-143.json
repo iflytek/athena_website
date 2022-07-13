@@ -1,0 +1,15 @@
+{
+  "title": "配置中心",
+  "slug": "/category/配置中心",
+  "permalink": "/athena_website/docs/category/配置中心",
+  "navigation": {
+    "previous": {
+      "title": "Python调试工具",
+      "permalink": "/athena_website/docs/加载器/Python插件调试工具"
+    },
+    "next": {
+      "title": "介绍",
+      "permalink": "/athena_website/docs/配置中心/polaris"
+    }
+  }
+}
