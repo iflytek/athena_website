@@ -8,28 +8,30 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        There is no need to pay attention to the development and operation and maintenance of
+        the underlying infrastructure and service-oriented, and the AI ​​engine can be deployed, 
+        upgraded, scaled, monitored and operated in an efficient, safe, autonomous and
+        controllable manner
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Focus on AI Algorithm Engineer',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        A Serverless, fully managed A.I. engine platform for A.I. algorithm engineers. 
+        For more details, see<code>docs</code> directory.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Stable and Reliable',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Polishing of daily billion-level PV, cloud native architecture and SRE dual-wheel drive,
+        system availability 99.99%
       </>
     ),
   },

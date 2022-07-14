@@ -1,0 +1,73 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/athena_website/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/athena_website/docs",
+          "mainDocId": "介绍",
+          "docs": [
+            {
+              "id": "加载器/概念",
+              "path": "/athena_website/docs/加载器/概念",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "加载器/C、C++插件",
+              "path": "/athena_website/docs/加载器/C、C++插件",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "加载器/Python插件",
+              "path": "/athena_website/docs/加载器/Python插件",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "加载器/Python插件调试工具",
+              "path": "/athena_website/docs/加载器/Python插件调试工具",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "介绍",
+              "path": "/athena_website/docs/介绍",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "配置中心/install",
+              "path": "/athena_website/docs/配置中心/install",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "配置中心/polaris",
+              "path": "/athena_website/docs/配置中心/polaris",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/加载器",
+              "path": "/athena_website/docs/category/加载器",
+              "sidebar": "tutorialSidebar"
+            },
+            {
+              "id": "/category/配置中心",
+              "path": "/athena_website/docs/category/配置中心",
+              "sidebar": "tutorialSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "tutorialSidebar": {
+              "link": {
+                "path": "/athena_website/docs/介绍",
+                "label": "介绍"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    }
+  }
+}
