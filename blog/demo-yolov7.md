@@ -1,11 +1,7 @@
 ---
 slug: yolov7
-title: YoLoV7
-authors:
-  name: Wu YiQiang
-  title: Docusaurus Core Team
-  url: https://github.com/sea-wyq
-  image_url: https://github.com/sea-wyq/wyq-blog/blob/main/static/img/dog.jpeg
+title: 快速在AthenaServing框架中部署YoLoV7
+authors: sea-wyq
 tags: [python, yolov7]
 ---
 

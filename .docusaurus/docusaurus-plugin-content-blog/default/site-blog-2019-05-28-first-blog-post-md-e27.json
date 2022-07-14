@@ -3,7 +3,7 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
   "source": "@site/blog/2019-05-28-first-blog-post.md",
   "title": "First Blog Post",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
+  "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet 。",
   "date": "2019-05-28T00:00:00.000Z",
   "formattedDate": "2019年5月28日",
   "tags": [
@@ -16,7 +16,7 @@
       "permalink": "/athena_website/blog/tags/docusaurus"
     }
   ],
-  "readingTime": 0.12,
+  "readingTime": 0.125,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -43,7 +43,7 @@
     ]
   },
   "prevItem": {
-    "title": "Long Blog Post",
-    "permalink": "/athena_website/blog/long-blog-post"
+    "title": "MDX Blog Post",
+    "permalink": "/athena_website/blog/mdx-blog-post"
   }
 }

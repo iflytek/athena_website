@@ -51,6 +51,10 @@
       "docusaurus"
     ]
   },
+  "prevItem": {
+    "title": "快速创建k8s集群(sealos3 on aws)",
+    "permalink": "/athena_website/blog/aws-sealos-3"
+  },
   "nextItem": {
     "title": "MDX Blog Post",
     "permalink": "/athena_website/blog/mdx-blog-post"

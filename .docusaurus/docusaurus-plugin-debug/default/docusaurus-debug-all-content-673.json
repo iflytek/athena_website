@@ -278,6 +278,104 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
+          "id": "yolov7",
+          "metadata": {
+            "permalink": "/athena_website/blog/yolov7",
+            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/demo-yolov7.md",
+            "source": "@site/blog/demo-yolov7.md",
+            "title": "快速在AthenaServing框架中部署YoLoV7",
+            "description": "背景",
+            "date": "2022-07-14T08:27:20.000Z",
+            "formattedDate": "2022年7月14日",
+            "tags": [
+              {
+                "label": "python",
+                "permalink": "/athena_website/blog/tags/python"
+              },
+              {
+                "label": "yolov7",
+                "permalink": "/athena_website/blog/tags/yolov-7"
+              }
+            ],
+            "readingTime": 0.45,
+            "hasTruncateMarker": false,
+            "authors": [
+              {
+                "name": "sea-wyq",
+                "title": "Docusaurus maintainer",
+                "url": "https://github.com/sea-wyq",
+                "imageURL": "https://avatars.githubusercontent.com/u/22475606?v=4",
+                "key": "sea-wyq"
+              }
+            ],
+            "frontMatter": {
+              "slug": "yolov7",
+              "title": "快速在AthenaServing框架中部署YoLoV7",
+              "authors": "sea-wyq",
+              "tags": [
+                "python",
+                "yolov7"
+              ]
+            },
+            "nextItem": {
+              "title": "快速创建k8s集群(sealos3 on aws)",
+              "permalink": "/athena_website/blog/aws-sealos-3"
+            }
+          },
+          "content": "## 背景\n>YOLOv7 在 5 FPS 到 160 FPS 范围内，速度和精度都超过了所有已知的目标检测器，并在 GPU V100 上，30 FPS 的情况下达到实时目标检测器的最高精度 56.8% AP。YOLOv7 是在 MS COCO 数据集上从头开始训练的，不使用任何其他数据集或预训练权重。"
+        },
+        {
+          "id": "aws-sealos-3",
+          "metadata": {
+            "permalink": "/athena_website/blog/aws-sealos-3",
+            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-07-14-sealos-aws.md",
+            "source": "@site/blog/2022-07-14-sealos-aws.md",
+            "title": "快速创建k8s集群(sealos3 on aws)",
+            "description": "1. 在aws上申请服务器资源",
+            "date": "2022-07-14T00:00:00.000Z",
+            "formattedDate": "2022年7月14日",
+            "tags": [
+              {
+                "label": "sealos",
+                "permalink": "/athena_website/blog/tags/sealos"
+              },
+              {
+                "label": "aws",
+                "permalink": "/athena_website/blog/tags/aws"
+              }
+            ],
+            "readingTime": 1.55,
+            "hasTruncateMarker": false,
+            "authors": [
+              {
+                "name": "sea-wyq",
+                "title": "Docusaurus maintainer",
+                "url": "https://github.com/sea-wyq",
+                "imageURL": "https://avatars.githubusercontent.com/u/22475606?v=4",
+                "key": "sea-wyq"
+              }
+            ],
+            "frontMatter": {
+              "slug": "aws-sealos-3",
+              "title": "快速创建k8s集群(sealos3 on aws)",
+              "authors": "sea-wyq",
+              "tags": [
+                "sealos",
+                "aws"
+              ]
+            },
+            "prevItem": {
+              "title": "快速在AthenaServing框架中部署YoLoV7",
+              "permalink": "/athena_website/blog/yolov7"
+            },
+            "nextItem": {
+              "title": "Welcome",
+              "permalink": "/athena_website/blog/welcome"
+            }
+          },
+          "content": "## 1. 在aws上申请服务器资源\n\n![img](aws.png)\n\n## 2. 使用sealos部署k8s集群\n\n#### 2.1. 关闭防火墙和selinux :All\n\n```\nsystemctl stop firewalld \nsystemctl disable firewalld \nsetenforce 0\n```\n\n#### 2.2 创建虚拟机之后，配置主机名，配置内网解析:All\n\n```\nhostnamectl set-hostname master \nhostnamectl set-hostname node1\n```\n\n#### 2.3.配置hosts文件:Master\n\n```\n# 节点ip通过各节点ipconfig获取\ncat <<EOF >> /etc/hosts  \n172.31.1.36 master  \n172.31.11.161 node1   \nEOF\n```\n\n#### 2.4.配置master免密登录各节点：Master\n\n```\nssh-keygen\nssh-copy-id root@master \nssh-copy-id root@node1 \n```\n\n#### 2.5. 下载并安装sealos-3.9并部署一个一主一从的k8s集群\n\n```\n# 下载sealos\nwget -c https://sealyun-home.oss-cn-beijing.aliyuncs.com/sealos/latest/sealos && \n    chmod +x sealos && mv sealos /usr/bin\n\n# 下载kubelete-1.22版本离线资源包\nwget -c https://sealyun.oss-cn-beijing.aliyuncs.com/05a3db657821277f5f3b92d834bbaf98-v1.22.0/kube1.22.0.tar.gz\n\n# 部署k8s集群\nsealos init \\\n--passwd 123456 \\\n--master 172.31.1.36 \\\n--node 172.31.11.161 \\\n--pkg-url /home/ubuntu/kube1.22.0.tar.gz \\\n--version v1.22.0\n```\n\n#### 2.6. 安裝helm\n- Download your desired version (wget  https://get.helm.sh/helm-v3.9.0-linux-amd64.tar.gz)\n- Unpack it (tar -zxvf helm-v3.9.0-linux-amd64.tar.gz)\n- Find the helm binary in the unpacked directory, and move it to its desireddestination (mv linux-amd64/helm /usr/local/bin/helm)\n\n#### 2.7 helm安装本地持久化存储openebs服务\n\n```\nhelm add repo openebs https://openebs.github.io/charts\nhelm pull openebs/openebs\n\n# 修改服务对应的storageclass即可\n#默认持久化数据地址：/var/openebs/local\n\n# 安装openebs\nhelm install ebs openebs\n```\n\n#### 2.8. 通过helm安装athena服务\n\n```\nhttps://github.com/sea-wyq/Athena_deploy.git\ncd Athena_deploy/chart/\nhelm install athena athenaserving\n```\n\n服务集群搭建成功。。。"
+        },
+        {
           "id": "welcome",
           "metadata": {
             "permalink": "/athena_website/blog/welcome",
@@ -332,6 +430,10 @@
                 "docusaurus"
               ]
             },
+            "prevItem": {
+              "title": "快速创建k8s集群(sealos3 on aws)",
+              "permalink": "/athena_website/blog/aws-sealos-3"
+            },
             "nextItem": {
               "title": "MDX Blog Post",
               "permalink": "/athena_website/blog/mdx-blog-post"
@@ -381,62 +483,11 @@
               "permalink": "/athena_website/blog/welcome"
             },
             "nextItem": {
-              "title": "Long Blog Post",
-              "permalink": "/athena_website/blog/long-blog-post"
-            }
-          },
-          "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\n\n:::tip\n\nUse the power of React to create interactive blog posts.\n\n```js\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n```\n\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n\n:::"
-        },
-        {
-          "id": "long-blog-post",
-          "metadata": {
-            "permalink": "/athena_website/blog/long-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-29-long-blog-post.md",
-            "source": "@site/blog/2019-05-29-long-blog-post.md",
-            "title": "Long Blog Post",
-            "description": "This is the summary of a very long blog post,",
-            "date": "2019-05-29T00:00:00.000Z",
-            "formattedDate": "2019年5月29日",
-            "tags": [
-              {
-                "label": "hello",
-                "permalink": "/athena_website/blog/tags/hello"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/athena_website/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 2.05,
-            "hasTruncateMarker": true,
-            "authors": [
-              {
-                "name": "Endilie Yacop Sucipto",
-                "title": "Maintainer of Docusaurus",
-                "url": "https://github.com/endiliey",
-                "imageURL": "https://github.com/endiliey.png",
-                "key": "endi"
-              }
-            ],
-            "frontMatter": {
-              "slug": "long-blog-post",
-              "title": "Long Blog Post",
-              "authors": "endi",
-              "tags": [
-                "hello",
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/athena_website/blog/mdx-blog-post"
-            },
-            "nextItem": {
               "title": "First Blog Post",
               "permalink": "/athena_website/blog/first-blog-post"
             }
           },
-          "content": "This is the summary of a very long blog post,\n\nUse a `<!--` `truncate` `-->` comment to limit blog post size in the list view.\n\n<!--truncate-->\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
+          "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\n\n:::tip\n\nUse the power of React to create interactive blog posts.\n\n```js\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n```\n\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n\n:::"
         },
         {
           "id": "first-blog-post",
@@ -445,7 +496,7 @@
             "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
             "source": "@site/blog/2019-05-28-first-blog-post.md",
             "title": "First Blog Post",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet 。",
             "date": "2019-05-28T00:00:00.000Z",
             "formattedDate": "2019年5月28日",
             "tags": [
@@ -458,7 +509,7 @@
                 "permalink": "/athena_website/blog/tags/docusaurus"
               }
             ],
-            "readingTime": 0.12,
+            "readingTime": 0.125,
             "hasTruncateMarker": false,
             "authors": [
               {
@@ -485,19 +536,20 @@
               ]
             },
             "prevItem": {
-              "title": "Long Blog Post",
-              "permalink": "/athena_website/blog/long-blog-post"
+              "title": "MDX Blog Post",
+              "permalink": "/athena_website/blog/mdx-blog-post"
             }
           },
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
+          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet 。"
         }
       ],
       "blogListPaginated": [
         {
           "items": [
+            "yolov7",
+            "aws-sealos-3",
             "welcome",
             "mdx-blog-post",
-            "long-blog-post",
             "first-blog-post"
           ],
           "metadata": {
@@ -505,13 +557,105 @@
             "page": 1,
             "postsPerPage": 10,
             "totalPages": 1,
-            "totalCount": 4,
+            "totalCount": 5,
             "blogDescription": "Blog",
             "blogTitle": "Blog"
           }
         }
       ],
       "blogTags": {
+        "/athena_website/blog/tags/python": {
+          "label": "python",
+          "items": [
+            "yolov7"
+          ],
+          "permalink": "/athena_website/blog/tags/python",
+          "pages": [
+            {
+              "items": [
+                "yolov7"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/python",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/yolov-7": {
+          "label": "yolov7",
+          "items": [
+            "yolov7"
+          ],
+          "permalink": "/athena_website/blog/tags/yolov-7",
+          "pages": [
+            {
+              "items": [
+                "yolov7"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/yolov-7",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/sealos": {
+          "label": "sealos",
+          "items": [
+            "aws-sealos-3"
+          ],
+          "permalink": "/athena_website/blog/tags/sealos",
+          "pages": [
+            {
+              "items": [
+                "aws-sealos-3"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/sealos",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/aws": {
+          "label": "aws",
+          "items": [
+            "aws-sealos-3"
+          ],
+          "permalink": "/athena_website/blog/tags/aws",
+          "pages": [
+            {
+              "items": [
+                "aws-sealos-3"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/aws",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
         "/athena_website/blog/tags/facebook": {
           "label": "facebook",
           "items": [
@@ -538,22 +682,20 @@
         "/athena_website/blog/tags/hello": {
           "label": "hello",
           "items": [
-            "welcome",
-            "long-blog-post"
+            "welcome"
           ],
           "permalink": "/athena_website/blog/tags/hello",
           "pages": [
             {
               "items": [
-                "welcome",
-                "long-blog-post"
+                "welcome"
               ],
               "metadata": {
                 "permalink": "/athena_website/blog/tags/hello",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
-                "totalCount": 2,
+                "totalCount": 1,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }
@@ -565,7 +707,6 @@
           "items": [
             "welcome",
             "mdx-blog-post",
-            "long-blog-post",
             "first-blog-post"
           ],
           "permalink": "/athena_website/blog/tags/docusaurus",
@@ -574,7 +715,6 @@
               "items": [
                 "welcome",
                 "mdx-blog-post",
-                "long-blog-post",
                 "first-blog-post"
               ],
               "metadata": {
@@ -582,7 +722,7 @@
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
-                "totalCount": 4,
+                "totalCount": 3,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }

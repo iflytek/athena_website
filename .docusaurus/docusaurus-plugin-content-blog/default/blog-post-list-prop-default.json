@@ -2,16 +2,20 @@
   "title": "Recent posts",
   "items": [
     {
+      "title": "快速在AthenaServing框架中部署YoLoV7",
+      "permalink": "/athena_website/blog/yolov7"
+    },
+    {
+      "title": "快速创建k8s集群(sealos3 on aws)",
+      "permalink": "/athena_website/blog/aws-sealos-3"
+    },
+    {
       "title": "Welcome",
       "permalink": "/athena_website/blog/welcome"
     },
     {
       "title": "MDX Blog Post",
       "permalink": "/athena_website/blog/mdx-blog-post"
-    },
-    {
-      "title": "Long Blog Post",
-      "permalink": "/athena_website/blog/long-blog-post"
     },
     {
       "title": "First Blog Post",

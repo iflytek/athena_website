@@ -1,5 +1,8 @@
 ---
-sidebar_position: 1
+slug: aws-sealos-3
+title: 快速创建k8s集群(sealos3 on aws)
+authors: sea-wyq
+tags: [sealos, aws]
 ---
 ## 1. 在aws上申请服务器资源
 
@@ -77,7 +80,7 @@ helm pull openebs/openebs
 helm install ebs openebs
 ```
 
-#### 2.8. 通过helm安装athema服务
+#### 2.8. 通过helm安装athena服务
 
 ```
 https://github.com/sea-wyq/Athena_deploy.git

@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/athena_website/blog',
-    component: ComponentCreator('/athena_website/blog', 'e4d'),
+    component: ComponentCreator('/athena_website/blog', 'c51'),
     exact: true
   },
   {
@@ -48,13 +48,13 @@ export default [
     exact: true
   },
   {
-    path: '/athena_website/blog/first-blog-post',
-    component: ComponentCreator('/athena_website/blog/first-blog-post', 'a12'),
+    path: '/athena_website/blog/aws-sealos-3',
+    component: ComponentCreator('/athena_website/blog/aws-sealos-3', 'fc0'),
     exact: true
   },
   {
-    path: '/athena_website/blog/long-blog-post',
-    component: ComponentCreator('/athena_website/blog/long-blog-post', 'b6e'),
+    path: '/athena_website/blog/first-blog-post',
+    component: ComponentCreator('/athena_website/blog/first-blog-post', 'a12'),
     exact: true
   },
   {
@@ -68,8 +68,13 @@ export default [
     exact: true
   },
   {
+    path: '/athena_website/blog/tags/aws',
+    component: ComponentCreator('/athena_website/blog/tags/aws', '592'),
+    exact: true
+  },
+  {
     path: '/athena_website/blog/tags/docusaurus',
-    component: ComponentCreator('/athena_website/blog/tags/docusaurus', '311'),
+    component: ComponentCreator('/athena_website/blog/tags/docusaurus', 'fa7'),
     exact: true
   },
   {
@@ -79,7 +84,7 @@ export default [
   },
   {
     path: '/athena_website/blog/tags/hello',
-    component: ComponentCreator('/athena_website/blog/tags/hello', 'a8d'),
+    component: ComponentCreator('/athena_website/blog/tags/hello', '594'),
     exact: true
   },
   {
@@ -88,8 +93,28 @@ export default [
     exact: true
   },
   {
+    path: '/athena_website/blog/tags/python',
+    component: ComponentCreator('/athena_website/blog/tags/python', '20e'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/tags/sealos',
+    component: ComponentCreator('/athena_website/blog/tags/sealos', '22a'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/tags/yolov-7',
+    component: ComponentCreator('/athena_website/blog/tags/yolov-7', 'eae'),
+    exact: true
+  },
+  {
     path: '/athena_website/blog/welcome',
     component: ComponentCreator('/athena_website/blog/welcome', '6dd'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/yolov7',
+    component: ComponentCreator('/athena_website/blog/yolov7', '55a'),
     exact: true
   },
   {

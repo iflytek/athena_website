@@ -1,5 +1,25 @@
 [
   {
+    "label": "python",
+    "permalink": "/athena_website/blog/tags/python",
+    "count": 1
+  },
+  {
+    "label": "yolov7",
+    "permalink": "/athena_website/blog/tags/yolov-7",
+    "count": 1
+  },
+  {
+    "label": "sealos",
+    "permalink": "/athena_website/blog/tags/sealos",
+    "count": 1
+  },
+  {
+    "label": "aws",
+    "permalink": "/athena_website/blog/tags/aws",
+    "count": 1
+  },
+  {
     "label": "facebook",
     "permalink": "/athena_website/blog/tags/facebook",
     "count": 1
@@ -7,12 +27,12 @@
   {
     "label": "hello",
     "permalink": "/athena_website/blog/tags/hello",
-    "count": 2
+    "count": 1
   },
   {
     "label": "docusaurus",
     "permalink": "/athena_website/blog/tags/docusaurus",
-    "count": 4
+    "count": 3
   },
   {
     "label": "hola",
