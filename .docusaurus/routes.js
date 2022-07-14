@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/athena_website/blog',
-    component: ComponentCreator('/athena_website/blog', 'c51'),
+    component: ComponentCreator('/athena_website/blog', '6a3'),
     exact: true
   },
   {
@@ -58,13 +58,23 @@ export default [
     exact: true
   },
   {
-    path: '/athena_website/blog/mdx-blog-post',
-    component: ComponentCreator('/athena_website/blog/mdx-blog-post', '8ef'),
+    path: '/athena_website/blog/sealos4-athenaserving',
+    component: ComponentCreator('/athena_website/blog/sealos4-athenaserving', 'a37'),
     exact: true
   },
   {
     path: '/athena_website/blog/tags',
     component: ComponentCreator('/athena_website/blog/tags', '0d6'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/tags/ai',
+    component: ComponentCreator('/athena_website/blog/tags/ai', '13b'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/tags/athenaserving',
+    component: ComponentCreator('/athena_website/blog/tags/athenaserving', '528'),
     exact: true
   },
   {
@@ -74,22 +84,17 @@ export default [
   },
   {
     path: '/athena_website/blog/tags/docusaurus',
-    component: ComponentCreator('/athena_website/blog/tags/docusaurus', 'fa7'),
-    exact: true
-  },
-  {
-    path: '/athena_website/blog/tags/facebook',
-    component: ComponentCreator('/athena_website/blog/tags/facebook', '4a1'),
-    exact: true
-  },
-  {
-    path: '/athena_website/blog/tags/hello',
-    component: ComponentCreator('/athena_website/blog/tags/hello', '594'),
+    component: ComponentCreator('/athena_website/blog/tags/docusaurus', 'f55'),
     exact: true
   },
   {
     path: '/athena_website/blog/tags/hola',
     component: ComponentCreator('/athena_website/blog/tags/hola', '2f7'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/tags/opensource',
+    component: ComponentCreator('/athena_website/blog/tags/opensource', '26f'),
     exact: true
   },
   {
@@ -99,7 +104,12 @@ export default [
   },
   {
     path: '/athena_website/blog/tags/sealos',
-    component: ComponentCreator('/athena_website/blog/tags/sealos', '22a'),
+    component: ComponentCreator('/athena_website/blog/tags/sealos', '4da'),
+    exact: true
+  },
+  {
+    path: '/athena_website/blog/tags/sealos-4',
+    component: ComponentCreator('/athena_website/blog/tags/sealos-4', '345'),
     exact: true
   },
   {

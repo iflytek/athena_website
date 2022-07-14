@@ -278,6 +278,65 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
+          "id": "sealos4-athenaserving",
+          "metadata": {
+            "permalink": "/athena_website/blog/sealos4-athenaserving",
+            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-07-15-sealos4.md",
+            "source": "@site/blog/2022-07-15-sealos4.md",
+            "title": "快速部署AthenaServing框架 (Sealos 4.x)",
+            "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
+            "date": "2022-07-15T00:00:00.000Z",
+            "formattedDate": "2022年7月15日",
+            "tags": [
+              {
+                "label": "sealos",
+                "permalink": "/athena_website/blog/tags/sealos"
+              },
+              {
+                "label": "ai",
+                "permalink": "/athena_website/blog/tags/ai"
+              },
+              {
+                "label": "sealos4",
+                "permalink": "/athena_website/blog/tags/sealos-4"
+              },
+              {
+                "label": "athenaserving",
+                "permalink": "/athena_website/blog/tags/athenaserving"
+              }
+            ],
+            "readingTime": 0.175,
+            "hasTruncateMarker": false,
+            "authors": [
+              {
+                "name": "sea-wyq",
+                "title": "Opensource AI Engineer",
+                "url": "https://github.com/berlinsaint",
+                "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
+                "key": "ybyang7"
+              }
+            ],
+            "frontMatter": {
+              "slug": "sealos4-athenaserving",
+              "title": "快速部署AthenaServing框架 (Sealos 4.x)",
+              "authors": [
+                "ybyang7"
+              ],
+              "tags": [
+                "sealos",
+                "ai",
+                "sealos4",
+                "athenaserving"
+              ]
+            },
+            "nextItem": {
+              "title": "快速在AthenaServing框架中部署YoLoV7",
+              "permalink": "/athena_website/blog/yolov7"
+            }
+          },
+          "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\n\n:::tip\n\nUse the power of React to create interactive blog posts.\n\n```js\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n```\n\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n\n:::"
+        },
+        {
           "id": "yolov7",
           "metadata": {
             "permalink": "/athena_website/blog/yolov7",
@@ -302,7 +361,7 @@
             "authors": [
               {
                 "name": "sea-wyq",
-                "title": "Docusaurus maintainer",
+                "title": "Opensource AI Engineer",
                 "url": "https://github.com/sea-wyq",
                 "imageURL": "https://avatars.githubusercontent.com/u/22475606?v=4",
                 "key": "sea-wyq"
@@ -316,6 +375,10 @@
                 "python",
                 "yolov7"
               ]
+            },
+            "prevItem": {
+              "title": "快速部署AthenaServing框架 (Sealos 4.x)",
+              "permalink": "/athena_website/blog/sealos4-athenaserving"
             },
             "nextItem": {
               "title": "快速创建k8s集群(sealos3 on aws)",
@@ -349,7 +412,7 @@
             "authors": [
               {
                 "name": "sea-wyq",
-                "title": "Docusaurus maintainer",
+                "title": "Opensource AI Engineer",
                 "url": "https://github.com/sea-wyq",
                 "imageURL": "https://avatars.githubusercontent.com/u/22475606?v=4",
                 "key": "sea-wyq"
@@ -382,52 +445,47 @@
             "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
             "source": "@site/blog/2021-08-26-welcome/index.md",
             "title": "Welcome",
-            "description": "Docusaurus blogging features are powered by the blog plugin.",
+            "description": "Welcome to contribute AthenaServing Docs and Blogs.",
             "date": "2021-08-26T00:00:00.000Z",
             "formattedDate": "2021年8月26日",
             "tags": [
               {
-                "label": "facebook",
-                "permalink": "/athena_website/blog/tags/facebook"
+                "label": "opensource",
+                "permalink": "/athena_website/blog/tags/opensource"
               },
               {
-                "label": "hello",
-                "permalink": "/athena_website/blog/tags/hello"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/athena_website/blog/tags/docusaurus"
+                "label": "athenaserving",
+                "permalink": "/athena_website/blog/tags/athenaserving"
               }
             ],
-            "readingTime": 0.405,
+            "readingTime": 0.035,
             "hasTruncateMarker": false,
             "authors": [
               {
-                "name": "Sébastien Lorber",
-                "title": "Docusaurus maintainer",
-                "url": "https://sebastienlorber.com",
-                "imageURL": "https://github.com/slorber.png",
-                "key": "slorber"
+                "name": "sea-wyq",
+                "title": "Opensource AI Engineer",
+                "url": "https://github.com/berlinsaint",
+                "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
+                "key": "ybyang7"
               },
               {
-                "name": "Yangshun Tay",
-                "title": "Front End Engineer @ Facebook",
-                "url": "https://github.com/yangshun",
-                "imageURL": "https://github.com/yangshun.png",
-                "key": "yangshun"
+                "name": "sea-wyq",
+                "title": "Opensource AI Engineer",
+                "url": "https://github.com/sea-wyq",
+                "imageURL": "https://avatars.githubusercontent.com/u/22475606?v=4",
+                "key": "sea-wyq"
               }
             ],
             "frontMatter": {
               "slug": "welcome",
               "title": "Welcome",
               "authors": [
-                "slorber",
-                "yangshun"
+                "ybyang7",
+                "sea-wyq"
               ],
               "tags": [
-                "facebook",
-                "hello",
-                "docusaurus"
+                "opensource",
+                "athenaserving"
               ]
             },
             "prevItem": {
@@ -435,59 +493,11 @@
               "permalink": "/athena_website/blog/aws-sealos-3"
             },
             "nextItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/athena_website/blog/mdx-blog-post"
-            }
-          },
-          "content": "[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).\n\nSimply add Markdown files (or folders) to the `blog` directory.\n\nRegular blog authors can be added to `authors.yml`.\n\nThe blog post date can be extracted from filenames, such as:\n\n- `2019-05-30-welcome.md`\n- `2019-05-30-welcome/index.md`\n\nA blog post folder can be convenient to co-locate blog post images:\n\n![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)\n\nThe blog supports tags as well!\n\n**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config."
-        },
-        {
-          "id": "mdx-blog-post",
-          "metadata": {
-            "permalink": "/athena_website/blog/mdx-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-01-mdx-blog-post.mdx",
-            "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
-            "title": "MDX Blog Post",
-            "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
-            "date": "2021-08-01T00:00:00.000Z",
-            "formattedDate": "2021年8月1日",
-            "tags": [
-              {
-                "label": "docusaurus",
-                "permalink": "/athena_website/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 0.175,
-            "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Sébastien Lorber",
-                "title": "Docusaurus maintainer",
-                "url": "https://sebastienlorber.com",
-                "imageURL": "https://github.com/slorber.png",
-                "key": "slorber"
-              }
-            ],
-            "frontMatter": {
-              "slug": "mdx-blog-post",
-              "title": "MDX Blog Post",
-              "authors": [
-                "slorber"
-              ],
-              "tags": [
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "Welcome",
-              "permalink": "/athena_website/blog/welcome"
-            },
-            "nextItem": {
               "title": "First Blog Post",
               "permalink": "/athena_website/blog/first-blog-post"
             }
           },
-          "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\n\n:::tip\n\nUse the power of React to create interactive blog posts.\n\n```js\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n```\n\n<button onClick={() => alert('button clicked!')}>Click me!</button>\n\n:::"
+          "content": "Welcome to contribute AthenaServing Docs and Blogs."
         },
         {
           "id": "first-blog-post",
@@ -536,8 +546,8 @@
               ]
             },
             "prevItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/athena_website/blog/mdx-blog-post"
+              "title": "Welcome",
+              "permalink": "/athena_website/blog/welcome"
             }
           },
           "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet 。"
@@ -546,10 +556,10 @@
       "blogListPaginated": [
         {
           "items": [
+            "sealos4-athenaserving",
             "yolov7",
             "aws-sealos-3",
             "welcome",
-            "mdx-blog-post",
             "first-blog-post"
           ],
           "metadata": {
@@ -564,6 +574,102 @@
         }
       ],
       "blogTags": {
+        "/athena_website/blog/tags/sealos": {
+          "label": "sealos",
+          "items": [
+            "sealos4-athenaserving",
+            "aws-sealos-3"
+          ],
+          "permalink": "/athena_website/blog/tags/sealos",
+          "pages": [
+            {
+              "items": [
+                "sealos4-athenaserving",
+                "aws-sealos-3"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/sealos",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 2,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/ai": {
+          "label": "ai",
+          "items": [
+            "sealos4-athenaserving"
+          ],
+          "permalink": "/athena_website/blog/tags/ai",
+          "pages": [
+            {
+              "items": [
+                "sealos4-athenaserving"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/ai",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/sealos-4": {
+          "label": "sealos4",
+          "items": [
+            "sealos4-athenaserving"
+          ],
+          "permalink": "/athena_website/blog/tags/sealos-4",
+          "pages": [
+            {
+              "items": [
+                "sealos4-athenaserving"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/sealos-4",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/athenaserving": {
+          "label": "athenaserving",
+          "items": [
+            "sealos4-athenaserving",
+            "welcome"
+          ],
+          "permalink": "/athena_website/blog/tags/athenaserving",
+          "pages": [
+            {
+              "items": [
+                "sealos4-athenaserving",
+                "welcome"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/athenaserving",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 2,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
         "/athena_website/blog/tags/python": {
           "label": "python",
           "items": [
@@ -610,29 +716,6 @@
             }
           ]
         },
-        "/athena_website/blog/tags/sealos": {
-          "label": "sealos",
-          "items": [
-            "aws-sealos-3"
-          ],
-          "permalink": "/athena_website/blog/tags/sealos",
-          "pages": [
-            {
-              "items": [
-                "aws-sealos-3"
-              ],
-              "metadata": {
-                "permalink": "/athena_website/blog/tags/sealos",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 1,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
         "/athena_website/blog/tags/aws": {
           "label": "aws",
           "items": [
@@ -656,73 +739,23 @@
             }
           ]
         },
-        "/athena_website/blog/tags/facebook": {
-          "label": "facebook",
+        "/athena_website/blog/tags/opensource": {
+          "label": "opensource",
           "items": [
             "welcome"
           ],
-          "permalink": "/athena_website/blog/tags/facebook",
+          "permalink": "/athena_website/blog/tags/opensource",
           "pages": [
             {
               "items": [
                 "welcome"
               ],
               "metadata": {
-                "permalink": "/athena_website/blog/tags/facebook",
+                "permalink": "/athena_website/blog/tags/opensource",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,
                 "totalCount": 1,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/athena_website/blog/tags/hello": {
-          "label": "hello",
-          "items": [
-            "welcome"
-          ],
-          "permalink": "/athena_website/blog/tags/hello",
-          "pages": [
-            {
-              "items": [
-                "welcome"
-              ],
-              "metadata": {
-                "permalink": "/athena_website/blog/tags/hello",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 1,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/athena_website/blog/tags/docusaurus": {
-          "label": "docusaurus",
-          "items": [
-            "welcome",
-            "mdx-blog-post",
-            "first-blog-post"
-          ],
-          "permalink": "/athena_website/blog/tags/docusaurus",
-          "pages": [
-            {
-              "items": [
-                "welcome",
-                "mdx-blog-post",
-                "first-blog-post"
-              ],
-              "metadata": {
-                "permalink": "/athena_website/blog/tags/docusaurus",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 3,
                 "blogDescription": "Blog",
                 "blogTitle": "Blog"
               }
@@ -742,6 +775,29 @@
               ],
               "metadata": {
                 "permalink": "/athena_website/blog/tags/hola",
+                "page": 1,
+                "postsPerPage": 10,
+                "totalPages": 1,
+                "totalCount": 1,
+                "blogDescription": "Blog",
+                "blogTitle": "Blog"
+              }
+            }
+          ]
+        },
+        "/athena_website/blog/tags/docusaurus": {
+          "label": "docusaurus",
+          "items": [
+            "first-blog-post"
+          ],
+          "permalink": "/athena_website/blog/tags/docusaurus",
+          "pages": [
+            {
+              "items": [
+                "first-blog-post"
+              ],
+              "metadata": {
+                "permalink": "/athena_website/blog/tags/docusaurus",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,

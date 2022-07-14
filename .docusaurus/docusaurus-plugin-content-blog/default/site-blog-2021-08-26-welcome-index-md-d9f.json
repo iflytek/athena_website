@@ -3,52 +3,47 @@
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
   "source": "@site/blog/2021-08-26-welcome/index.md",
   "title": "Welcome",
-  "description": "Docusaurus blogging features are powered by the blog plugin.",
+  "description": "Welcome to contribute AthenaServing Docs and Blogs.",
   "date": "2021-08-26T00:00:00.000Z",
   "formattedDate": "2021年8月26日",
   "tags": [
     {
-      "label": "facebook",
-      "permalink": "/athena_website/blog/tags/facebook"
+      "label": "opensource",
+      "permalink": "/athena_website/blog/tags/opensource"
     },
     {
-      "label": "hello",
-      "permalink": "/athena_website/blog/tags/hello"
-    },
-    {
-      "label": "docusaurus",
-      "permalink": "/athena_website/blog/tags/docusaurus"
+      "label": "athenaserving",
+      "permalink": "/athena_website/blog/tags/athenaserving"
     }
   ],
-  "readingTime": 0.405,
+  "readingTime": 0.035,
   "hasTruncateMarker": false,
   "authors": [
     {
-      "name": "Sébastien Lorber",
-      "title": "Docusaurus maintainer",
-      "url": "https://sebastienlorber.com",
-      "imageURL": "https://github.com/slorber.png",
-      "key": "slorber"
+      "name": "sea-wyq",
+      "title": "Opensource AI Engineer",
+      "url": "https://github.com/berlinsaint",
+      "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
+      "key": "ybyang7"
     },
     {
-      "name": "Yangshun Tay",
-      "title": "Front End Engineer @ Facebook",
-      "url": "https://github.com/yangshun",
-      "imageURL": "https://github.com/yangshun.png",
-      "key": "yangshun"
+      "name": "sea-wyq",
+      "title": "Opensource AI Engineer",
+      "url": "https://github.com/sea-wyq",
+      "imageURL": "https://avatars.githubusercontent.com/u/22475606?v=4",
+      "key": "sea-wyq"
     }
   ],
   "frontMatter": {
     "slug": "welcome",
     "title": "Welcome",
     "authors": [
-      "slorber",
-      "yangshun"
+      "ybyang7",
+      "sea-wyq"
     ],
     "tags": [
-      "facebook",
-      "hello",
-      "docusaurus"
+      "opensource",
+      "athenaserving"
     ]
   },
   "prevItem": {
@@ -56,7 +51,7 @@
     "permalink": "/athena_website/blog/aws-sealos-3"
   },
   "nextItem": {
-    "title": "MDX Blog Post",
-    "permalink": "/athena_website/blog/mdx-blog-post"
+    "title": "First Blog Post",
+    "permalink": "/athena_website/blog/first-blog-post"
   }
 }

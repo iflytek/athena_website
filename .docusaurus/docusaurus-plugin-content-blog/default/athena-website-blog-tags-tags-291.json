@@ -1,5 +1,25 @@
 [
   {
+    "label": "sealos",
+    "permalink": "/athena_website/blog/tags/sealos",
+    "count": 2
+  },
+  {
+    "label": "ai",
+    "permalink": "/athena_website/blog/tags/ai",
+    "count": 1
+  },
+  {
+    "label": "sealos4",
+    "permalink": "/athena_website/blog/tags/sealos-4",
+    "count": 1
+  },
+  {
+    "label": "athenaserving",
+    "permalink": "/athena_website/blog/tags/athenaserving",
+    "count": 2
+  },
+  {
     "label": "python",
     "permalink": "/athena_website/blog/tags/python",
     "count": 1
@@ -10,33 +30,23 @@
     "count": 1
   },
   {
-    "label": "sealos",
-    "permalink": "/athena_website/blog/tags/sealos",
-    "count": 1
-  },
-  {
     "label": "aws",
     "permalink": "/athena_website/blog/tags/aws",
     "count": 1
   },
   {
-    "label": "facebook",
-    "permalink": "/athena_website/blog/tags/facebook",
+    "label": "opensource",
+    "permalink": "/athena_website/blog/tags/opensource",
     "count": 1
   },
   {
-    "label": "hello",
-    "permalink": "/athena_website/blog/tags/hello",
+    "label": "hola",
+    "permalink": "/athena_website/blog/tags/hola",
     "count": 1
   },
   {
     "label": "docusaurus",
     "permalink": "/athena_website/blog/tags/docusaurus",
-    "count": 3
-  },
-  {
-    "label": "hola",
-    "permalink": "/athena_website/blog/tags/hola",
     "count": 1
   }
 ]
