@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkathenaserving=self.webpackChunkathenaserving||[]).push([[7008],{7677:e=>{e.exports=JSON.parse('{"label":"sealos4","permalink":"/athena_website/blog/tags/sealos-4","allTagsPath":"/athena_website/blog/tags","count":1}')}}]);
