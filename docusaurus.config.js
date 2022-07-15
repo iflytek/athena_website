@@ -10,7 +10,7 @@ const config = {
   tagline: 'An Opensource AI model serving framework with high performance, flexible loading mechanism...',
   url: 'https://xfyun.github.io',
   baseUrl: '/athena_website/',
-  onBrokenLinks: 'warn',
+  onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/brand.png',
 
