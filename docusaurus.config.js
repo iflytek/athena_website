@@ -45,14 +45,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/xfyun/athena_website/tree/master/docs',
+            'https://github.com/xfyun/athena_website/tree/master',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/xfyun/athena_website/tree/master/blogs',
+            'https://github.com/xfyun/athena_website/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
