@@ -4,7 +4,7 @@
       "id": "sealos4-athenaserving",
       "metadata": {
         "permalink": "/athena_website/blog/sealos4-athenaserving",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-07-15-sealos4.md",
+        "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2022-07-15-sealos4.md",
         "source": "@site/blog/2022-07-15-sealos4.md",
         "title": "快速部署AthenaServing框架 (Sealos 4.x)",
         "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
@@ -32,7 +32,7 @@
         "hasTruncateMarker": false,
         "authors": [
           {
-            "name": "sea-wyq",
+            "name": "ybyang7",
             "title": "Opensource AI Engineer",
             "url": "https://github.com/berlinsaint",
             "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
@@ -63,7 +63,7 @@
       "id": "yolov7",
       "metadata": {
         "permalink": "/athena_website/blog/yolov7",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/demo-yolov7.md",
+        "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/demo-yolov7.md",
         "source": "@site/blog/demo-yolov7.md",
         "title": "快速在AthenaServing框架中部署YoLoV7",
         "description": "背景",
@@ -114,7 +114,7 @@
       "id": "aws-sealos-3",
       "metadata": {
         "permalink": "/athena_website/blog/aws-sealos-3",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-07-14-sealos-aws.md",
+        "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2022-07-14-sealos-aws.md",
         "source": "@site/blog/2022-07-14-sealos-aws.md",
         "title": "快速创建k8s集群(sealos3 on aws)",
         "description": "1. 在aws上申请服务器资源",
@@ -165,7 +165,7 @@
       "id": "welcome",
       "metadata": {
         "permalink": "/athena_website/blog/welcome",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
+        "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2021-08-26-welcome/index.md",
         "source": "@site/blog/2021-08-26-welcome/index.md",
         "title": "Welcome",
         "description": "Welcome to contribute AthenaServing Docs and Blogs.",
@@ -185,7 +185,7 @@
         "hasTruncateMarker": false,
         "authors": [
           {
-            "name": "sea-wyq",
+            "name": "ybyang7",
             "title": "Opensource AI Engineer",
             "url": "https://github.com/berlinsaint",
             "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
@@ -226,7 +226,7 @@
       "id": "first-blog-post",
       "metadata": {
         "permalink": "/athena_website/blog/first-blog-post",
-        "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
+        "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2019-05-28-first-blog-post.md",
         "source": "@site/blog/2019-05-28-first-blog-post.md",
         "title": "First Blog Post",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet 。",

@@ -10,14 +10,37 @@
           "className": "docs-version-current",
           "path": "/athena_website/docs",
           "tagsPath": "/athena_website/docs/tags",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
-          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
+          "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs",
+          "editUrlLocalized": "https://github.com/xfyun/athena_website/tree/master/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/yangyanbo/projects/iflytek/code/opensource/doc-templates/new-opensource-doc/sidebars.js",
           "contentPath": "/Users/yangyanbo/projects/iflytek/code/opensource/doc-templates/new-opensource-doc/docs",
           "contentPathLocalized": "/Users/yangyanbo/projects/iflytek/code/opensource/doc-templates/new-opensource-doc/i18n/zh-Hans/docusaurus-plugin-content-docs/current",
           "docs": [
+            {
+              "unversionedId": "标准协议",
+              "id": "标准协议",
+              "title": "标准协议",
+              "description": "ASE API协议",
+              "source": "@site/docs/标准协议.md",
+              "sourceDirName": ".",
+              "slug": "/标准协议",
+              "permalink": "/athena_website/docs/标准协议",
+              "draft": false,
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/标准协议.md",
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4
+              },
+              "sidebar": "tutorialSidebar",
+              "previous": {
+                "title": "部署文档",
+                "permalink": "/athena_website/docs/配置中心/install"
+              }
+            },
             {
               "unversionedId": "加载器/概念",
               "id": "加载器/概念",
@@ -28,7 +51,7 @@
               "slug": "/加载器/概念",
               "permalink": "/athena_website/docs/加载器/概念",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/加载器/概念.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/加载器/概念.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -55,7 +78,7 @@
               "slug": "/加载器/C、C++插件",
               "permalink": "/athena_website/docs/加载器/C、C++插件",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/加载器/C、C++插件.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/加载器/C、C++插件.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -76,14 +99,14 @@
             {
               "unversionedId": "加载器/Python插件",
               "id": "加载器/Python插件",
-              "title": "V2设计",
+              "title": "V2设计(进行中)",
               "description": "doc",
               "source": "@site/docs/加载器/Python插件.md",
               "sourceDirName": "加载器",
               "slug": "/加载器/Python插件",
               "permalink": "/athena_website/docs/加载器/Python插件",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/加载器/Python插件.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/加载器/Python插件.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 3,
@@ -111,7 +134,7 @@
               "slug": "/加载器/Python插件调试工具",
               "permalink": "/athena_website/docs/加载器/Python插件调试工具",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/加载器/Python插件调试工具.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/加载器/Python插件调试工具.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 4,
@@ -139,7 +162,7 @@
               "slug": "/介绍",
               "permalink": "/athena_website/docs/介绍",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/介绍.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/介绍.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -162,7 +185,7 @@
               "slug": "/配置中心/install",
               "permalink": "/athena_website/docs/配置中心/install",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/配置中心/install.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/配置中心/install.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 2,
@@ -174,6 +197,10 @@
               "previous": {
                 "title": "介绍",
                 "permalink": "/athena_website/docs/配置中心/polaris"
+              },
+              "next": {
+                "title": "标准协议",
+                "permalink": "/athena_website/docs/标准协议"
               }
             },
             {
@@ -186,7 +213,7 @@
               "slug": "/配置中心/polaris",
               "permalink": "/athena_website/docs/配置中心/polaris",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/配置中心/polaris.md",
+              "editUrl": "https://github.com/xfyun/athena_website/tree/master/docs/配置中心/polaris.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
@@ -266,6 +293,10 @@
                   "slug": "/category/配置中心",
                   "permalink": "/athena_website/docs/category/配置中心"
                 }
+              },
+              {
+                "type": "doc",
+                "id": "标准协议"
               }
             ]
           }
@@ -281,7 +312,7 @@
           "id": "sealos4-athenaserving",
           "metadata": {
             "permalink": "/athena_website/blog/sealos4-athenaserving",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-07-15-sealos4.md",
+            "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2022-07-15-sealos4.md",
             "source": "@site/blog/2022-07-15-sealos4.md",
             "title": "快速部署AthenaServing框架 (Sealos 4.x)",
             "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
@@ -309,7 +340,7 @@
             "hasTruncateMarker": false,
             "authors": [
               {
-                "name": "sea-wyq",
+                "name": "ybyang7",
                 "title": "Opensource AI Engineer",
                 "url": "https://github.com/berlinsaint",
                 "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
@@ -340,7 +371,7 @@
           "id": "yolov7",
           "metadata": {
             "permalink": "/athena_website/blog/yolov7",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/demo-yolov7.md",
+            "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/demo-yolov7.md",
             "source": "@site/blog/demo-yolov7.md",
             "title": "快速在AthenaServing框架中部署YoLoV7",
             "description": "背景",
@@ -391,7 +422,7 @@
           "id": "aws-sealos-3",
           "metadata": {
             "permalink": "/athena_website/blog/aws-sealos-3",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2022-07-14-sealos-aws.md",
+            "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2022-07-14-sealos-aws.md",
             "source": "@site/blog/2022-07-14-sealos-aws.md",
             "title": "快速创建k8s集群(sealos3 on aws)",
             "description": "1. 在aws上申请服务器资源",
@@ -442,7 +473,7 @@
           "id": "welcome",
           "metadata": {
             "permalink": "/athena_website/blog/welcome",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
+            "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2021-08-26-welcome/index.md",
             "source": "@site/blog/2021-08-26-welcome/index.md",
             "title": "Welcome",
             "description": "Welcome to contribute AthenaServing Docs and Blogs.",
@@ -462,7 +493,7 @@
             "hasTruncateMarker": false,
             "authors": [
               {
-                "name": "sea-wyq",
+                "name": "ybyang7",
                 "title": "Opensource AI Engineer",
                 "url": "https://github.com/berlinsaint",
                 "imageURL": "https://avatars.githubusercontent.com/u/10629930?v=4",
@@ -503,7 +534,7 @@
           "id": "first-blog-post",
           "metadata": {
             "permalink": "/athena_website/blog/first-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
+            "editUrl": "https://github.com/xfyun/athena_website/tree/master/blog/2019-05-28-first-blog-post.md",
             "source": "@site/blog/2019-05-28-first-blog-post.md",
             "title": "First Blog Post",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet 。",

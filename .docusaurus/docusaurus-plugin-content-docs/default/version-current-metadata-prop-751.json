@@ -67,10 +67,22 @@
           }
         ],
         "href": "/athena_website/docs/category/配置中心"
+      },
+      {
+        "type": "link",
+        "label": "标准协议",
+        "href": "/athena_website/docs/标准协议",
+        "docId": "标准协议"
       }
     ]
   },
   "docs": {
+    "标准协议": {
+      "id": "标准协议",
+      "title": "标准协议",
+      "description": "ASE API协议",
+      "sidebar": "tutorialSidebar"
+    },
     "加载器/概念": {
       "id": "加载器/概念",
       "title": "什么是加载器，什么是引擎",
@@ -85,7 +97,7 @@
     },
     "加载器/Python插件": {
       "id": "加载器/Python插件",
-      "title": "V2设计",
+      "title": "V2设计(进行中)",
       "description": "doc",
       "sidebar": "tutorialSidebar"
     },

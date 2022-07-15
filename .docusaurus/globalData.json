@@ -11,6 +11,11 @@
           "mainDocId": "介绍",
           "docs": [
             {
+              "id": "标准协议",
+              "path": "/athena_website/docs/标准协议",
+              "sidebar": "tutorialSidebar"
+            },
+            {
               "id": "加载器/概念",
               "path": "/athena_website/docs/加载器/概念",
               "sidebar": "tutorialSidebar"

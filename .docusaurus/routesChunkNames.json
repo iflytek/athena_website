@@ -96,7 +96,7 @@
       "plugin": "plugin---athena-website-blogced-1a6"
     },
     "sidebar": "sidebar---athena-website-blog-814-624",
-    "content": "content---athena-website-blog-mdx-blog-postd-48-66a"
+    "content": "content---athena-website-blog-sealos-4-athenaservingd-48-3eb"
   },
   "/athena_website/blog/tags-0d6": {
     "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
@@ -275,12 +275,16 @@
     },
     "content": "content---athena-website-markdown-page-393-669"
   },
-  "/athena_website/docs-ff6": {
+  "/athena_website/docs-7a6": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---athena-website-docs-435-4bf"
     },
     "versionMetadata": "versionMetadata---athena-website-docs-935-30a"
+  },
+  "/athena_website/docs/标准协议-055": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---athena-website-docs-标准协议-5-ad-0a2"
   },
   "/athena_website/docs/加载器/概念-480": {
     "__comp": "__comp---theme-doc-item-178-a40",

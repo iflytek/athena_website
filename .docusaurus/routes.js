@@ -134,8 +134,14 @@ export default [
   },
   {
     path: '/athena_website/docs',
-    component: ComponentCreator('/athena_website/docs', 'ff6'),
+    component: ComponentCreator('/athena_website/docs', '7a6'),
     routes: [
+      {
+        path: '/athena_website/docs/标准协议',
+        component: ComponentCreator('/athena_website/docs/标准协议', '055'),
+        exact: true,
+        sidebar: "tutorialSidebar"
+      },
       {
         path: '/athena_website/docs/加载器/概念',
         component: ComponentCreator('/athena_website/docs/加载器/概念', '480'),

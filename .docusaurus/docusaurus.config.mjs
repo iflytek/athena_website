@@ -12,7 +12,7 @@ export default {
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/brand.png",
   "organizationName": "facebook",
-  "projectName": "docusaurus",
+  "projectName": "athena_website",
   "i18n": {
     "defaultLocale": "zh-Hans",
     "locales": [
@@ -29,11 +29,11 @@ export default {
         "docs": {
           "path": "docs",
           "sidebarPath": "/Users/yangyanbo/projects/iflytek/code/opensource/doc-templates/new-opensource-doc/sidebars.js",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "editUrl": "https://github.com/xfyun/athena_website/tree/master"
         },
         "blog": {
           "showReadingTime": true,
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "editUrl": "https://github.com/xfyun/athena_website/tree/master"
         },
         "theme": {
           "customCss": "/Users/yangyanbo/projects/iflytek/code/opensource/doc-templates/new-opensource-doc/src/css/custom.css"
@@ -85,15 +85,11 @@ export default {
           "items": [
             {
               "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
+              "href": "https://stackoverflow.com/questions/tagged/athenaserving"
             },
             {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
-            },
-            {
-              "label": "Twitter",
-              "href": "https://twitter.com/docusaurus"
+              "label": "Github Discussion",
+              "href": "https://github.com/xfyun/proposals/discussions"
             }
           ]
         },
@@ -105,8 +101,8 @@ export default {
               "to": "/blog"
             },
             {
-              "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
+              "label": "GitHub Issues",
+              "href": "https://github.com/xfyun/aiges/issues"
             }
           ]
         }

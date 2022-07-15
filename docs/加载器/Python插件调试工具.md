@@ -8,8 +8,5 @@ sidebar_label: Python调试工具
 
 [README.md](https://github.com/xfyun/aiges_python/blob/master/README.md)
 
-# V2设计
-
-[doc](https://github.com/xfyun/aiges/blob/master/doc/design/wrapper_interface.md)
-
+# V2设计 (进行中)
 [code](https://github.com/xfyun/aiges_python/tree/master/aiges_python/v2)
