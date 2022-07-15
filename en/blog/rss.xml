@@ -4,10 +4,20 @@
         <title>AthenaServing Doc Blog</title>
         <link>https://xfyun.github.io/athena_website/en/blog</link>
         <description>AthenaServing Doc Blog</description>
-        <lastBuildDate>Fri, 15 Jul 2022 00:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 15 Jul 2022 00:59:30 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
+        <item>
+            <title><![CDATA[快速在AthenaServing框架中部署YoLoV7]]></title>
+            <link>https://xfyun.github.io/athena_website/en/blog/yolov7</link>
+            <guid>yolov7</guid>
+            <pubDate>Fri, 15 Jul 2022 00:59:30 GMT</pubDate>
+            <description><![CDATA[背景]]></description>
+            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="背景">背景<a class="hash-link" href="#背景" title="Direct link to heading">​</a></h2><blockquote><p>YOLOv7 在 5 FPS 到 160 FPS 范围内，速度和精度都超过了所有已知的目标检测器，并在 GPU V100 上，30 FPS 的情况下达到实时目标检测器的最高精度 56.8% AP。YOLOv7 是在 MS COCO 数据集上从头开始训练的，不使用任何其他数据集或预训练权重。</p></blockquote>]]></content:encoded>
+            <category>python</category>
+            <category>yolov7</category>
+        </item>
         <item>
             <title><![CDATA[快速部署AthenaServing框架 (Sealos 4.x)]]></title>
             <link>https://xfyun.github.io/athena_website/en/blog/sealos4-athenaserving</link>
@@ -19,16 +29,6 @@
             <category>ai</category>
             <category>sealos4</category>
             <category>athenaserving</category>
-        </item>
-        <item>
-            <title><![CDATA[快速在AthenaServing框架中部署YoLoV7]]></title>
-            <link>https://xfyun.github.io/athena_website/en/blog/yolov7</link>
-            <guid>yolov7</guid>
-            <pubDate>Thu, 14 Jul 2022 23:23:21 GMT</pubDate>
-            <description><![CDATA[背景]]></description>
-            <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="背景">背景<a class="hash-link" href="#背景" title="Direct link to heading">​</a></h2><blockquote><p>YOLOv7 在 5 FPS 到 160 FPS 范围内，速度和精度都超过了所有已知的目标检测器，并在 GPU V100 上，30 FPS 的情况下达到实时目标检测器的最高精度 56.8% AP。YOLOv7 是在 MS COCO 数据集上从头开始训练的，不使用任何其他数据集或预训练权重。</p></blockquote>]]></content:encoded>
-            <category>python</category>
-            <category>yolov7</category>
         </item>
         <item>
             <title><![CDATA[快速创建k8s集群(sealos3 on aws)]]></title>
