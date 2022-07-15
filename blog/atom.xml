@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xfyun.github.io/athena_website/blog</id>
     <title>AthenaServing Doc Blog</title>
-    <updated>2022-07-15T00:59:30.000Z</updated>
+    <updated>2022-07-15T01:04:32.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xfyun.github.io/athena_website/blog"/>
     <subtitle>AthenaServing Doc Blog</subtitle>
@@ -11,7 +11,7 @@
         <title type="html"><![CDATA[快速在AthenaServing框架中部署YoLoV7]]></title>
         <id>yolov7</id>
         <link href="https://xfyun.github.io/athena_website/blog/yolov7"/>
-        <updated>2022-07-15T00:59:30.000Z</updated>
+        <updated>2022-07-15T01:04:32.000Z</updated>
         <summary type="html"><![CDATA[背景]]></summary>
         <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="背景">背景<a class="hash-link" href="#背景" title="标题的直接链接">​</a></h2><blockquote><p>YOLOv7 在 5 FPS 到 160 FPS 范围内，速度和精度都超过了所有已知的目标检测器，并在 GPU V100 上，30 FPS 的情况下达到实时目标检测器的最高精度 56.8% AP。YOLOv7 是在 MS COCO 数据集上从头开始训练的，不使用任何其他数据集或预训练权重。</p></blockquote>]]></content>
         <author>
