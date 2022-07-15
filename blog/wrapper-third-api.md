@@ -153,4 +153,5 @@ def wrapperFini() -> int:
     return 0
 ```
 **以上就是一个调用三方API的Python加载器实现的简单介绍**
-具体代码可以参考[集成三方API实现Python加载器插件](link)
+
+具体代码可以参考[集成三方API实现Python加载器插件](https://github.com/xfyun/aiges/tree/master/demo)
