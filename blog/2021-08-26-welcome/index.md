@@ -1,7 +1,7 @@
 ---
 slug: welcome
 title: Welcome
-authors: [ybyang7, sea-wyq,robbinlol]
+authors: [ybyang7, sea-wyq, jhr]
 tags: [opensource, athenaserving]
 ---
 
