@@ -5,6 +5,10 @@ sidebar_label: Python插件
 
 # V2-New Design of wrapper.py设计(进行中)
 
+## wrapper.py 架构
+
+Python Language Wrapper:
+![img](python.png)
 
 ## 背景
 
@@ -43,3 +47,26 @@ wrapper.py如何被调用的细节，但是这块背后逻辑其实是复杂的�
 
 
 [code](https://github.com/xfyun/aiges_python/tree/master/aiges_python/v2)
+
+
+### 快速开始你的第一个wrapper.py
+
+1. 安装aiges sdk库 (该sdk用于辅助 wrapper.py本地调试)
+
+ `pip install aiges`
+
+2. 使用 aiges 快速生成你的python项目
+
+ `python -m aiges create <name>`
+
+ 该命令生成 name 文件夹，并生成1个 wrapper.py 半成品
+
+3. 完善wrapper.py，本地调试
+
+5. 将wrapper.py 构建为docker镜像，并发布到 athena_serving框架
+
+6. 访问你的AI HTTP API... Enjoy...
+
+
+#### WrapperBase类
+todo
