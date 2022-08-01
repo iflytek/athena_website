@@ -69,4 +69,130 @@ wrapper.py如何被调用的细节，但是这块背后逻辑其实是复杂的�
 
 
 #### WrapperBase类
-todo
+在使用前，如果不确定aiges是否为最新版本，可以通过`pip`指令更新
+
+   ```bash
+   pip install --upgrade aiges -i Https://pypi.python.org/simple
+   ```
+
+`aiges`的整个结构为
+
+   ```bash
+   total 48
+   drwxr-xr-x. 8 root root   199 Aug  1 18:45 ./
+   drwxr-xr-x. 1 root root   156 Aug  1 17:40 ../
+   -rw-r--r--. 1 root root  1151 Aug  1 17:40 __init__.py
+   -rw-r--r--. 1 root root   109 Aug  1 17:40 __main__.py
+   drwxr-xr-x. 2 root root   185 Aug  1 17:40 __pycache__/
+   drwxr-xr-x. 3 root root    88 Aug  1 17:40 backup/
+   -rw-r--r--. 1 root root  1677 Aug  1 17:40 call_wrapper.py
+   drwxr-xr-x. 3 root root    93 Aug  1 17:40 cmd/
+   -rw-r--r--. 1 root root  1934 Aug  1 17:40 dto.py
+   -rw-r--r--. 1 root root 22284 Aug  1 17:40 sdk.py
+   drwxr-xr-x. 2 root root    22 Aug  1 17:40 test_data/
+   drwxr-xr-x. 2 root root    68 Aug  1 17:40 tpls/
+   drwxr-xr-x. 3 root root    39 Aug  1 17:40 utils/
+   -rw-r--r--. 1 root root  4733 Aug  1 17:40 wrapper.py
+   ```
+在`sdk.py`文件中，可以看到`WrapperBase`类实现。
+
+#### 下面就以一个**调用三方API**的`Wrapper`的实现过程说明如何基于`WrapperBase`类实现加载器插件。实现过程和[V1版本实现](https://xfyun.github.io/athena_website/blog/music/api)类似，只有小部分需要注意区别。
+
+   1. 类似于V1版本的Python加载器插件，实现的函数同样为`wrapperInit`、`wrapperFini`、`wrapperOnceExec`和`wrapperError`，不同的是，由于继承自`WrapperBase`，基类里说明了必须实现的接口，否则会出现`NotImplementedError`错误
+
+   2. 运行中用到的参数，V1版本是将变量声明为全局变量，在`wrapperInit`初始化后，其余函数体内将其声明为`global`；V2版本目前是将变量声明为类变量，实例变量同样可选
+
+   3. 需要注意的是， `wrapperOnceExec`函数执行返回的类型是`Response`对象，而不是前一版本表示错误码的`int`类型，意味着**无论结果正常与否**，均需实例化`Response`对象并返回
+      
+      - 未出现异常时，`Response`对象是是由一个或多个`ResponseData`对象构成的列表，其中`ResponseData`类有`key`、`data`、`len`、`type`和`status`五个成员变量
+
+      - 出现异常时，直接调用`Response`对象的`response_err`方法返回错误码
+
+   4. 实现`Wrapper`类时，必须**继承**`WrapperBase`类, 前三个成员函数的实现可以参考[V1版本实现](https://xfyun.github.io/athena_website/blog/music/api)
+
+         ```python
+         class Wrapper(WrapperBase):
+            def wrapperInit(cls, config: {}) -> int:
+               ...
+            
+            def wrapperFini(cls) -> int:
+               ...
+            
+            def wrapperError(cls, ret: int) -> str:
+               ...
+            
+            # 这里需要注意返回的类型是 Response 对象
+            def wrapperOnceExec(self, params: {}, reqData: DataListCls) -> Response:
+               res = Response()
+               # 调用三方API的过程
+               ...
+               # 拿到返回的结果
+               
+               # 如果发生错误
+               if error_occur:
+                  return res.response_err(error_code)
+
+               l = ResponseData()
+               l.key = "output_text"
+               l.type = 0
+               l.status = 3
+               l.data = r.text
+               l.len = len(r.text.encode())
+
+               res.list = [l]
+               return res
+         ```
+
+   5. 对于本地调试运行，需要注意下列几点
+
+      - 额外声明用户请求和用户响应两个类
+
+         ```python
+         class UserRequest(object):
+            '''
+            定义请求类:
+            params:  params 开头的属性代表最终HTTP协议中的功能参数parameters部分， 对应的是xtest.toml中的parameter字段
+                     params Field支持 StringParamField，
+                     NumberParamField，BooleanParamField,IntegerParamField，每个字段均支持枚举
+                     params 属性多用于协议中的控制字段，请求body字段不属于params范畴
+
+            input:    input字段多用与请求数据段，即body部分，当前支持 ImageBodyField、 StringBodyField和AudioBodyField
+            '''
+            params1 = StringParamField(key="mode", enums=["music", "humming"], value='humming')
+
+            input1 = AudioBodyField(key="data", path="/home/wrapper/test.wav")
+            
+         class UserResponse(object):
+            '''
+            定义响应类:
+            accepts:  accepts代表响应中包含哪些字段, 以及数据类型
+
+            input:    input字段多用与请求数据段，即body部分，当前支持 ImageBodyField, StringBodyField, 和AudioBodyField
+            '''
+            accept1 = StringBodyField(key="ouput_text")
+         ```
+      - 在`Wrapper`类中声明一个类成员变量的字典类型config，模拟`wrapperInit`函数中传递参数，后期选择注释即可，在本例中如下
+         ```python
+         class Wrapper(WrapperBase):
+            # 实例化用户请求类和用户响应类
+            requestCls = UserRequest()
+            responseCls = UserResponse()
+            config = {}
+            config = {
+            "requrl" : ...,
+            "http_method" : ...,
+            "http_uri" : ...,
+            "access_key_music" : ...,
+            "access_secret_music" : ...,
+            "access_key_humming" : ...,
+            "access_secret_humming" : ...
+            }
+         ```
+
+      - 声明`main`函数，实例化`Wrapper`对象，运行程序
+         ```python
+            if __name__ == '__main__':
+               m = Wrapper()
+               m.schema()
+               m.run()
+         ```
