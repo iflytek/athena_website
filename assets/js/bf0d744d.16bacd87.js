@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkathenaserving=self.webpackChunkathenaserving||[]).push([[6070],{8506:e=>{e.exports=JSON.parse('{"permalink":"/athena_website/blog/tags/\u4e09\u65b9api","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
