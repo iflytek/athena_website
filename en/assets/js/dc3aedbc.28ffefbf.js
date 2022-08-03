@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkathenaserving=self.webpackChunkathenaserving||[]).push([[5339],{8617:e=>{e.exports=JSON.parse('{"label":"envd","permalink":"/athena_website/en/blog/tags/envd","allTagsPath":"/athena_website/en/blog/tags","count":1}')}}]);
