@@ -22,12 +22,12 @@ git clone https://github.com/iflytek/aiges.git
 ### 3.进入项目mmocr并执行命令完成项目镜像构建
 ```
 cd aiges/demo/mmocr/
-envd up -t ImageName:Tag        # 构建镜像并进入创建的容器
+envd up -t mmocr:test        # 构建镜像并进入创建的容器
 ```     
 
 ### 4. 进入容器并执行推理
 ```
-cd /home/aiges
-python wpapper/wrapper_v2.py
+cd /home/aiges/wpapper/
+python wrapper_v2.py
 ```
 
