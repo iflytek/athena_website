@@ -99,7 +99,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/介绍',
+                to: '/docs/概览',
               },
             ],
           },
