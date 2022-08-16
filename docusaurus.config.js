@@ -73,7 +73,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: '介绍',
+            docId: '概览',
             position: 'left',
             label: 'Tutorial',
           },
