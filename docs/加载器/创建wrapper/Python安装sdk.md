@@ -15,6 +15,10 @@ sidebar_label: 一、安装aiges sdk
 
 ## 使用pypi pip安装
 
-` pip3 install aiges -i https://pypi.python.org/simple`
-
-## 验证安装
+使用`pip`指令完成`aiges`库的安装和更新
+   ```python
+   # 安装aiges
+   pip install aiges -i https://pypi.python.org/simple
+   # 更新aiges
+   pip install --upgrade aiges -i https://pypi.python.org/simple
+   ```
