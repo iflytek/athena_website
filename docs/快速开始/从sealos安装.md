@@ -27,10 +27,10 @@ sidebar_label: 从sealos完整安装
 * AIGES 与 Language Wrapper
 
 - C/C++ Wrapper
-  ![](/img/ai-applications/c++.png)
+  ![](/imgs/c++.png)
 
 - Python Wrapper
-  ![](/img/ai-applications/python.png)
+  ![](/imgs/python.png)
 
 ## 面向场景
 
@@ -76,9 +76,9 @@ $ wget -c https://sealyun-home.oss-cn-beijing.aliyuncs.com/sealos-4.0/latest/sea
 $ sealos run labring/kubernetes:v1.19.16 labring/calico:v3.22.1   --masters 192.168.64.2 -p <password>
 ```
 
-![](/img/ai-applications/sealos4-run-k8s.png)
-![](/img/ai-applications/sealos4-run-k8s-2.png)
-![](/img/ai-applications/sealos4-run-k8s-3.png)
+![](/imgs/sealos4-run-k8s.png)
+![](/imgs/sealos4-run-k8s-2.png)
+![](/imgs/sealos4-run-k8s-3.png)
 
 * Install helm
 
