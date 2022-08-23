@@ -3,7 +3,7 @@ sidebar_position: 2
 sidebar_label: 版本计划
 ---
 
-# ASF RoadMap (v3计划)
+# ASF RoadMap (v3 plan)
 
-## 愿景
-全领域内让AI能力极速落地到生产应用,让AI模型到服务触手可达;让ASF成为AI推理服务框架的事实标准。
+## vision
+In the whole field, AI capabilities can be rapidly implemented in production applications, and AI models and services can be reached at your fingertips; let ASF become the de facto standard of AI inference service framework.

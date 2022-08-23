@@ -4,58 +4,58 @@ sidebar_label: 介绍
 ---
 ![](img/polaris-w.png)
 
-## 核心功能
-- 动态配置 (Dynamic Config)
-- 服务注册、服务发现(Register Service & Discover Service)
+## Core functions
+- Dynamic Config
+- Service Registration, Service Discovery
 
-## 特性
+## Features
 - Full category for managing service
-- 支持服务配置多版本
-- 支持配置回滚
+- Support multiple versions of service configuration
+- Support configuration rollback
 - Support feedback for pushing config
-- 支持在线管理 Provider/Consumer
-- 高可用
-- 快速集成
-- 支持Docker/k8s部署
+- Support online management of Provider/Consumer
+- High availability
+- Quick integration
+- Support Docker/k8s deployment
 
-## 架构
+## Architecture
 ![](img/15138432239107.jpg)
 
-## 核心模块
+## core module
 - **Cynosure**
 
-  此模块用于管理一些基础数据和配置，提供一个可视化配置中心操作页面。
+	This module is used to manage some basic data and configuration, and provides a visual configuration center operation page.
 
-  您可以使用它创建 Region,集群信息，服务配置等
+	You can use it to create Region, cluster information, service configuration, etc.
   
-  ![](img/polaris.png)
+	![](img/polaris.png)
 
 
-  ![](img/15138461728383.jpg)
+	![](img/15138461728383.jpg)
 
 - **Finder(SDK with go/java/c++)**
 
-  客户端SDK， 用于Client侧集成配置中心和服务发现  
+	Client SDK, used for client side integrated configuration center and service discovery
 
 - **Companion**
 
-  此模块用于操作和zookeeper交互的组件。 
+	This module is used to manipulate components that interact with zookeeper.
   
-  **案例 #1: 服务发现**
+	**Case #1: Service Discovery**
 
-  ![](img/15138469634925.jpg)
+	![](img/15138469634925.jpg)
 
-  **案例 #2: 配置推送**
+	**Case #2: Configuration Push**
 
-  ![](img/15138470006112.jpg)
+	![](img/15138470006112.jpg)
 
-  **案例 #3 Feedback?**
+	**Case #3 Feedback?**
 
-  ![](img/15138470283686.jpg)
+	![](img/15138470283686.jpg)
 
 
 
-## 如何在您的项目众引用 **Polaris**
+## How to Cite **Polaris** in Your Project
 
 - **Install**
 

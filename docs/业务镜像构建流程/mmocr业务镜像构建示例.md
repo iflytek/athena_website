@@ -1,31 +1,31 @@
 ---
 sidebar_position: 2
 ---
-# mmocr业务镜像构建
+# MMOCR business image construction
 
-> 通过将mmocr服务与aiges推理服务框架进行结合，实现服务推理的快速落地。
+> By combining the mmocr service with the aiges inference service framework, the rapid implementation of service inference is realized.
 
-## 构建业务镜像流程
+## Build a business mirroring process
 
-### 1. envd 安装
+### 1. Envd install
 ```
 pip install --pre --upgrade envd
 envd bootstrap
 ```
 
-### 2.克隆aiges项目
+### 2.Clone the aiges project
 
 ```
 git clone https://github.com/iflytek/aiges.git
 ```
 
-### 3.进入项目mmocr并执行命令完成项目镜像构建
+### 3.Enter the project mmocr and execute the command to complete the construction of the project image
 ```
 cd aiges/demo/mmocr/
-envd up -t mmocr:test        # 构建镜像并进入创建的容器
+envd up -t mmocr:test        # Build the image and enter the created container
 ```     
 
-### 4. 进入容器并执行推理
+### 4. Enter the container and perform service inference
 ```
 cd /home/aiges/wpapper/
 python wrapper_v2.py

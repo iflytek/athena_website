@@ -2,23 +2,22 @@
 sidebar_position: 1
 sidebar_label: 一、安装aiges sdk
 ---
-# aiges sdk 工具库
+# aiges sdk tool library
 
-## 背景
+## background
 
-1. wrapper.py 在线上环境是由 c程序调用通过pybind11调用起来，而写wrapper.py的同事并不熟悉该机制，或者说难以在本地调试 wrapper.py的运行。
+1. The online environment of wrapper.py is called by the c program through pybind11, and the colleagues who wrote wrapper.py are not familiar with this mechanism, or it is difficult to debug the operation of wrapper.py locally.
 
-2. 需要一个python库来帮助用户前期快速定位 wrapper.py编写的是否有问题，提前发现问题，提高开发效率。
+2. A python library is needed to help users quickly locate whether there is a problem with wrapper.py in the early stage, find problems in advance, and improve development efficiency.
 
-3. 需要通过wrapper.py的开发来明确用户的输入、输出，极简化python推理开发流程。
+3. It is necessary to clarify the user's input and output through the development of wrapper.py, which greatly simplifies the python inference development process.
 
 
-## 使用pypi pip安装
+## Install aiges
 
-使用`pip`指令完成`aiges`库的安装和更新
-   ```python
-   # 安装aiges
-   pip install aiges -i https://pypi.python.org/simple
-   # 更新aiges
-   pip install --upgrade aiges -i https://pypi.python.org/simple
-   ```
+Install and update the `aiges` library using the `pip` command
+    ````python
+    # install aiges
+    pip install aiges -i https://pypi.python.org/simple
+    # update aiges
+    pip install --upgrade aiges -i https://pypi.python.org/simple
