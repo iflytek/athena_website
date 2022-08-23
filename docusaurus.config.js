@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'AthenaServing Doc',
   tagline: 'An Opensource AI model serving framework with high performance, flexible loading mechanism...',
-  url: 'https://xfyun.github.io',
+  url: 'https://iflytek.github.io',
   baseUrl: '/athena_website/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
