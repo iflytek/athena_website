@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'AthenaServing Doc',
+  title: 'AthenaServingFrameWork Doc',
   tagline: 'An Opensource AI model serving framework with high performance, flexible loading mechanism...',
   url: 'https://iflytek.github.io',
   baseUrl: '/athena_website/',
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'iflytek', // Usually your GitHub org/user name.
   projectName: 'athena_website', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -66,9 +66,9 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'AthenaServing Doc',
+        title: 'AthenaServingFramework Doc',
         logo: {
-          alt: 'AthenaServing Logo',
+          alt: 'AthenaServingFramework Logo',
           src: 'img/brand.png',
         },
         items: [

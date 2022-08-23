@@ -4,7 +4,7 @@ sidebar_label: 从sealos完整安装
 ---
 # AthenaServing Framework (ASF)
 
-## 愿景
+## Vision
 
 给任何有需要使用AI能力的场景，提供一致的工程化管理AI能力的方案。任何领域的AI场景的用户，都可以快速的将其算法模型落地成统一标准的HTTP API服务。
 
