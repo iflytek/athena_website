@@ -25,6 +25,7 @@ const config = {
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['en', "zh-Hans"],
+
   },
 
   presets: [
@@ -45,14 +46,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/xfyun/athena_website/tree/master',
+            'https://github.com/iflytek/athena_website/tree/master',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/xfyun/athena_website/tree/master',
+            'https://github.com/iflytek/athena_website/tree/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -77,6 +78,20 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                href: 'https://github.com/iflytek/athena_website/',
+                label: 'Help Us Translate',
+              },
+            ],
+          },
         // {
         //   type: 'docsVersionDropdown',
         //   position: 'right',
@@ -85,7 +100,7 @@ const config = {
         // },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/xfyun/aiges',
+            href: 'https://github.com/iflytek/aiges',
             label: 'GitHub',
             position: 'right',
           },
@@ -129,7 +144,7 @@ const config = {
               },
               {
                 label: 'GitHub Issues',
-                href: 'https://github.com/xfyun/aiges/issues',
+                href: 'https://github.com/iflytek/aiges/issues',
               },
             ],
           },
