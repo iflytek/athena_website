@@ -4,9 +4,8 @@ sidebar_label: Python插件
 ---
 
 <!-- # V2-New Design of wrapper.py设计(进行中) -->
-# :star: Python加载器插件文档 
 
-## wrapper.py 架构
+## :star:Python加载器插件文档 
 
 
 Python Language Wrapper:

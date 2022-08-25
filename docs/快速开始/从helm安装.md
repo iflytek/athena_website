@@ -1,30 +1,32 @@
 ---
 sidebar_position: 2
-sidebar_label: 从helm chart安装
+sidebar_label: Install Service With Helm Chart
 ---
 
-## 前置条件
- - 部署 k8s集群
- - 安装 helm
+# Install Service With Helm Chart
+
+## Precondition
+  - Deploy k8s cluster
+  - Install helm
 
 ## Install 
 ```
 cd chart
 helm install athena . 
 
-## 等待AthenaServing服务组件全部启动成功后
+## Wait for the AthenaServing service components to start successfully
 helm  install mmocr .
 ```
 
 
-## 配置Demo.py
+## Configure Demo.py
 
 ```
-image = open("demo_text_det.jpg","rb")     #待检测的图片
+image = open("demo_text_det.jpg","rb")     # image to be detected
 img = base64.b64encode(image.read())
 
 
-url = "http://172.16.59.17:30889/mmocr"    # url 可以是 hostIP:nodePort 也可以是 svcIP:svcPort   
+url = "http://172.16.59.17:30889/mmocr"    # url can be hostIP:nodePort or svcIP:svcPort
 url = "http://172.16.59.17:30889/v1/private/mmocr"
 method = "POST"
 headers = {"Content-Type":"application/json"}
@@ -66,15 +68,15 @@ data = {
 ```
 
 
-## 测试Demo.py
+## Testing Demo.py
 ```
 python demo.py
 ```
 
-## 被检测图片
+## Detected image
 ![img](imgs/demo_text_det.jpg)
 
-## 结果展示
+## Result display
 
 ```
 ##################################

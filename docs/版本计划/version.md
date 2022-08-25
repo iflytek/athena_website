@@ -1,6 +1,6 @@
 ---
 sidebar_position: 2
-sidebar_label: 版本计划
+sidebar_label: Release Plan
 ---
 
 # ASF RoadMap (v3 plan)

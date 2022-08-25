@@ -1,88 +1,85 @@
 ---
 sidebar_position: 3
-sidebar_label: Python插件
+sidebar_label: Python Plugin
 ---
 
-<!-- # V2-New Design of wrapper.py设计(进行中) -->
-# :star: V2-Python加载器插件文档 
+# Python Plugin
 
-
-## wrapper.py 架构
+## :star:wrapper.py Architecture
 
 
 Python Language Wrapper:
 ![img](python.png)
 
-## 背景
+## Background
 
-1. 之前的wrapper.py 由[C项目](https://github.com/xfyun/aiges_c_python_wrapper)
-   实现了 [wrapper接口](https://github.com/xfyun/aiges_c_python_wrapper/blob/master/include/aiges/wrapper.h)实现。
+1. The previous wrapper.py was implemented by [C project](https://github.com/xfyun/aiges_c_python_wrapper) [wrapper interface](https://github.com/xfyun/aiges_c_python_wrapper/blob/master/include/aiges/wrapper.h).
 
-   **aiges_c_python_wrapper**编译成`libwrapper.so`，由aiges统一加载。
-2. 之前如果python用户需要实现推理插件， 只需要参考 [wrapper.py](https://github.com/xfyun/aiges/blob/master/demo/mmocr/wrapper.py)实现对应接口后，即可实现python推理。
+   **aiges_c_python_wrapper** is compiled into `libwrapper.so` and loaded uniformly by aiges.
+2. Previously, if python users needed to implement an inference plugin, they only needed to refer to [wrapper.py](https://github.com/xfyun/aiges/blob/master/demo/mmocr/wrapper.py) to implement the corresponding interface, namely Python inference can be achieved.
 
-3. 当用户实现`wrapper.py`后， 无法直接调试运行，且不太了解`aiges`如何调用`wrapper.py`以及传递到 `wrapper.py`对应的参数是什么类型都非常疑惑，造成python版本的AI推理插件集成方式并不那么pythonic。
+3. When the user implements `wrapper.py`, they cannot directly debug and run, and they do not know how `aiges` calls `wrapper.py` and what type of parameters are passed to `wrapper.py`. Versions of the AI inference plugin integrate in a less pythonic way.
 
-## 新版wrapper.py集成方式优化目标
+## The optimization goal of the integration method of the new version of wrapper.py
 
-1. 用户可以定义AI能力输入的数据字段，控制字段列表。
+1. Users can define the data fields entered by AI capabilities and control the list of fields.
 
-2. 用户可以按需定义AI能力输出的字段列表。
+2. Users can define the field list of AI capability output as needed.
 
-3. 平台工具可以通过`wrapper.py`自动导出用户schema并配置到webgate，对用户屏蔽schema概念。
+3. Platform tools can automatically export user schema through `wrapper.py` and configure it to webgate, shielding the schema concept for users.
 
-4. 平台工具可以提供用户直接运行`wrapper.py`，并按照平台真实加载`wrapper.py`方式传递对应参数，方便用户在任何环境快速Debug，发现一些基础问题。
+4. The platform tool can provide users to run `wrapper.py` directly, and pass the corresponding parameters according to the way of actually loading `wrapper.py` on the platform, which is convenient for users to quickly debug in any environment and find some basic problems.
 
-5. 尽可能简化用户输入，并且在有限的用户输入下，获取平台需要的信息。
+5. Simplify user input as much as possible, and obtain the information required by the platform under limited user input.
 
-## wrapper.py 新设计
+## wrapper.py new design
 
-![img_1.png](img_1.png)
-1. 提供 python sdk:  python sdk将发布到 pypi，方便用户随时安装和更新。
+1. Provide python sdk: The python sdk will be released to pypi, which is convenient for users to install and update at any time.
 
-2. [为什么?](#为什么) 新wrapper要求用户 实现 `Wrapper` 类，并将原有 函数式 wrapper开头的函数放入到 `Wrapper` （类方法|对象方法？待讨论 todo)中去。用户实现的`Wrapper`类必须**继承**`WrapperBase`类，并且`wrapperInit`、`wrapperFini`、`wrapperOnceExec`和`wrapperError`等函数在`WrapperBase`类被声明为类方法`@classmethod`，未实现则会抛出`NotImplementedError`错误。
+2. [Why?](#Why) The new wrapper requires users to implement the `Wrapper` class, and put the functions at the beginning of the original functional wrapper into the `Wrapper` (class method | object method? Todo). The `Wrapper` class implemented by the user must **inherit** the `WrapperBase` class, and the functions `wrapperInit`, `wrapperFini`, `wrapperOnceExec` and `wrapperError` are declared as class methods `@classmethod` in the `WrapperBase` class , if not implemented, `NotImplementedError` will be thrown.
 
-3. 用户在Wrapper类中除了要实现原有的`wrapperInit`、`WrapperExec`等实现之外，需要额外定义能力的输入和输出，最终生成的HTTP接口基于此信息生成。
+3. In addition to implementing the original `wrapperInit`, `WrapperExec` and other implementations in the Wrapper class, users need to define additional input and output capabilities. The final generated HTTP interface is generated based on this information.
 
-### 为什么
+### Why?
 
-   - 我们希望用户只需要定义关键的实现，而不必关心背后`wrapper.py`如何被调用的细节，这块背后逻辑其实是复杂的，我们不希望在`wrapper.py`中让用户过多的定义一些平台预先要求的设定，我们希望在SDK的基类中实现定义好这些默认行为，比如`wrapper.py`真实调用顺序 为 `WrapperInit` -> `WrapperExec` -> `WrapperFin`。
+   - We hope that users only need to define key implementations, and do not need to care about the details of how `wrapper.py` is called behind. The logic behind this is actually complicated, and we don't want users to have too much in `wrapper.py` Define some settings that are pre-required by the platform. We want to implement and define these default behaviors in the base class of the SDK. For example, the actual calling sequence of `wrapper.py` is `WrapperInit` -> `WrapperExec` -> `WrapperFin`.
 
-   - 基类中定义行为的好处是，用户继承基类并实现必要方法后，可以直接运行，并且调试拿到结果。
+   - The advantage of defining the behavior in the base class is that after the user inherits the base class and implements the necessary methods, he can run it directly and get the result after debugging.
 
-   - 至于为什么希望用户通过继承`WrapperBase`类来实现 Wrapper类中，是因为可以在基类行为中做一些更Pythonic的魔法，从而简化用户的输入。
+   - As for why you want users to implement the Wrapper class by inheriting the `WrapperBase` class, it's because you can do some more Pythonic magic in the base class behavior to simplify user input.
 
-      [新版本Python加载器插件](https://github.com/xfyun/aiges_c_python_wrapper/blob/master/wrapper.py)
+       [New version Python loader plugin](https://github.com/xfyun/aiges_c_python_wrapper/blob/master/wrapper.py)
 
 
-### WrapperBase类
-新版Python加载器插件最大的改变是引入了`WrapperBase`类，用户实现的`Wrapper`类必须**继承**`WrapperBase`类，并且`wrapperInit`、`wrapperFini`、`wrapperOnceExec`和`wrapperError`等函数在`WrapperBase`类被声明为类方法`@classmethod`，未实现则会抛出`NotImplementedError`错误
+### WrapperBase Class
+The biggest change in the new version of the Python loader plugin is the introduction of the `WrapperBase` class, the `Wrapper` class implemented by the user must **inherit** the `WrapperBase` class, and the `wrapperInit`, `wrapperFini`, `wrapperOnceExec` and `wrapperError` Such functions are declared as class methods `@classmethod` in the `WrapperBase` class. If they are not implemented, a `NotImplementedError` error will be thrown.
 
-### 快速开始你的第一个wrapper.py
+### Quick start with your first wrapper.py
 
-**下面介绍一个调用三方API的Python加载器插件的实现过程来帮助您理解整个过程。**
+**The following describes the implementation process of a Python loader plugin that calls the third-party API to help you understand the whole process. **
 
-#### 准备项目
+#### Preparing the project
 
-   1. [安装或者更新](#appendix)aiges sdk库 (该sdk用于辅助`wrapper.py`本地调试)
+   1. [Install or update](#appendix) aiges sdk library (this sdk is used to assist local debugging of `wrapper.py`)
 
-   2. 使用 aiges 快速生成你的python项目
-      ```python
-      python -m aiges create -n  "project"
-      ```
-      该命令生成一个 "project" 文件夹，并包含 wrapper.py 的半成品。
+   2. Use aiges to quickly generate your python project
+       ````python
+       python -m aiges create -n "project"
+       ````
+       This command generates a "project" folder and contains the semifinished wrapper.py.
 
-   3. 添加项目内依赖，[完善wrapper.py并且本地调试通过](#完成本地调试)。
+   3. Add dependencies in the project, [perfect wrapper.py and pass local debugging](#Complete local debugging).
 
-   4. 将wrapper.py 构建为docker镜像，并发布到 athena_serving框架。
+   4. Build wrapper.py as a docker image and publish it to the athenaserving framework.
 
-   5. 访问你的AI HTTP API... Enjoy...
+   5. Access your AI HTTP API... Enjoy...
 
-#### 完成本地调试
+#### complete local debugging
 
-##### :exclamation: 提前注意
-   - 实现`Wrapper`类时，必须**继承**`WrapperBase`类。
-   - 运行中用到的参数，可以选择将变量声明为类变量，实例变量同样可选。为了模拟AIservice传递参数，在`Wrapper`类中声明一个类成员config用于初始化，上线后**选择注释**即可，在本例中如下
+##### :exclamation: advance notice
+   - When implementing the `Wrapper` class, you must **inherit** the `WrapperBase` class.
+   - For parameters used in operation, you can choose to declare variables as class variables, and instance variables are also optional. To simulate AIservice passing parameters, declare a class member in the `Wrapper` class.
+   config is used for initialization, after going online **select the comment**, in this example as follows
       ```python
       class Wrapper(WrapperBase):
          requrl, http_method, http_uri = None, None, None
@@ -102,11 +99,11 @@ Python Language Wrapper:
          "access_secret_humming" : ...
          }
       ```
-   - `wrapperOnceExec`函数执行返回的类型是`Response`对象，而不是通常表示执行状态错误码的`int`类型，意味着**无论结果正常与否**，均需实例化`Response`对象并返回。
+   - The return type of the `wrapperOnceExec` function is a `Response` object, not the `int` type that usually represents the execution status error code, which means **whether the result is normal or not**, you need to instantiate the `Response` object and Return the result.
       ```python
       res = Response()
       ```
-      - 未出现异常时，`Response`对象是是由一个或多个`ResponseData`对象构成的列表，其中`ResponseData`类有`key`、`data`、`len`、`type`和`status`五个成员变量
+      - When no exception occurs, the `Response` object is a list of one or more `ResponseData` objects, where the `ResponseData` class has `key`, `data`, `len`, `type` and `status` five member variables
          ```python
          l = ResponseData()
          l.key = "output_text"
@@ -118,14 +115,14 @@ Python Language Wrapper:
          # multi data: res.list = [l1, l2, l3]
          return res
          ```
-      - 出现异常时，直接调用`Response`对象的`response_err`方法返回错误码
+      - When an exception occurs, directly call the `response_err` method of the `Response` object to return the error code
          ```python
          return res.response_err(ERROR_CODE)
          ```
 
-##### 继承`WrapperBase`类完成`Wrapper`类的构建
+##### Inheriting the `WrapperBase` class to complete the construction of the `Wrapper` class
 
-   1. `wrapperInit`用于初始化加载器执行过程中用到的变量，参数从字典变量`config`中读入
+   1. `wrapperInit` is used to initialize the variables used in the execution of the loader, and the parameters are read from the dictionary variable `config`
       ```python
       def wrapperInit(cls, config: {}) -> int:
          print("Initializing ..")
@@ -140,51 +137,51 @@ Python Language Wrapper:
          return 0
       ```
 
-   2. `wrapperError`将会返回错误码代表的含义，在本例中如下
-   ```python
-   def wrapperError(cls, ret: int) -> str:
-      if ret == 1001:
-         return "识别无结果"
-      elif ret == 2000:
-         return "录音失败，可能是设备权限问题"
-      elif ret == 2001:
-         return "初始化错误或者初始化超时"
-      elif ret == 2002:
-         return "处理metadata错误"
-      elif ret == 2004:
-         return "无法生成指纹（有可能是静音）"
-      elif ret == 2005:
-         return "超时"
-      elif ret == 3000:
-         return "服务端错误"
-      elif ret == 3001:
-         return "Access Key不存在或错误"
-      elif ret == 3002:
-         return "HTTP内容非法"
-      elif ret == 3003:
-         return "请求数超出限制（需要升级账号）"
-      elif ret == 3006:
-         return "参数非法"
-      elif ret == 3014:
-         return "签名非法"
-      elif ret == 3015:
-         return "QPS超出限制（需要升级账号）"
-      else:
-         return f"User Defined Error: {ret}"
-   ```
+   2. `wrapperError` will return the meaning of the error code, in this case as follows
+      ```python
+      def wrapperError(cls, ret: int) -> str:
+         if ret == 1001:
+            return "No result for identification"
+         elif ret == 2000:
+            return "Recording failed, maybe a device permission problem"
+         elif ret == 2001:
+            return "Initialization error or initialization timeout"
+         elif ret == 2002:
+            return "handle metadata error"
+         elif ret == 2004:
+            return "Failed to generate fingerprint (possibly silent)"
+         elif ret == 2005:
+            return "timeout"
+         elif ret == 3000:
+            return "Server Error"
+         elif ret == 3001:
+            return "Access Key does not exist or is wrong"
+         elif ret == 3002:
+            return "HTTP content is illegal"
+         elif ret == 3003:
+            return "The number of requests exceeds the limit (need to upgrade the account)"
+         elif ret == 3006:
+            return "Illegal parameter"
+         elif ret == 3014:
+            return "Illegal signature"
+         elif ret == 3015:
+            return "QPS exceeds the limit (need to upgrade account)"
+         else:
+            return f"User Defined Error: {ret}"
+      ```
 
-   3. `wrapperFini`用于处理一些加载器插件的堆区指针的回收工作，对于Python语言，通常不需要实现：
-   ```python
-   def wrapperFini() -> int:
-      logging.info('Wrapper finished.')
-      return 0
-   ```
+   3. `wrapperFini` is used to deal with the recovery of heap pointers of some loader plugins. For the Python language, it is usually not necessary to implement:
+      ```python
+      def wrapperFini() -> int:
+         logging.info('Wrapper finished.')
+         return 0
+      ```
 
-   4. `wrapperOnceExec`的执行由<u>鉴权</u>、<u>发送HTTP请求</u>和<u>接收响应数据</u>构成
+   4. The execution of `wrapperOnceExec` consists of <u>authentication</u>, <u>send HTTP request</u> and <u>receive response data</u>
       ```python
       def wrapperOnceExec(self, params: {}, reqData: DataListCls) -> Response:
          ......
-         # 鉴权
+         # Authentication
          data_mode = params['mode']
         
          access_key = Wrapper.access_key_music if data_mode == 'music' else Wrapper.access_key_humming
@@ -208,7 +205,7 @@ Python Language Wrapper:
          if sign is None:
                return res.response_err(5014)
 
-         # 发送http请求
+         # send http request
          files = {'sample': src}
          data = {
                'access_key': access_key,
@@ -229,7 +226,7 @@ Python Language Wrapper:
          if r.status_code != 200:
             return res.response_err(4000 + r.status_code)
 
-         # 接受响应数据
+         # accept response data
          pattern = re.compile('"code":\d+')
          error_code = re.findall(pattern, r.text)
          error_code = error_code[0].split(':')[-1]
@@ -250,19 +247,16 @@ Python Language Wrapper:
       ```
 
 
-#### 本地调试模拟传入数据:heavy_check_mark:
-   - 额外声明**用户请求**和**用户响应**两个类
+#### Local debugging simulates incoming data: heavy_check_mark:
+   - additionally declare **user request** and **user response** two classes
 
       ```python
       class UserRequest(object):
          '''
-         定义请求类:
-         params:  params 开头的属性代表最终HTTP协议中的功能参数parameters部分， 对应的是xtest.toml中的parameter字段
-                  params Field支持 StringParamField，
-                  NumberParamField，BooleanParamField,IntegerParamField，每个字段均支持枚举
-                  params 属性多用于协议中的控制字段，请求body字段不属于params范畴
+         Define the request class:
+         params:  params The attribute at the beginning of params represents the function parameter part in the   final HTTP protocol, which corresponds to the parameter field in xtest.toml.params Field supports StringParamField. NumberParamField, BooleanParamField, IntegerParamField, each field supports enumeration. The params attribute is mostly used for the control field in the protocol, but the request body field does not belong to the params category
 
-         input:    input字段多用与请求数据段，即body部分，当前支持 ImageBodyField、 StringBodyField和AudioBodyField
+         input:    The input field is mostly used with the request data segment, that is, the body part. Currently, ImageBodyField, StringBodyField and AudioBodyField are supported.
          '''
          params1 = StringParamField(key="mode", enums=["music", "humming"], value='humming')
 
@@ -270,22 +264,22 @@ Python Language Wrapper:
          
       class UserResponse(object):
          '''
-         定义响应类:
-         accepts:  accepts代表响应中包含哪些字段, 以及数据类型
+         Define the response class:
+         accepts:  accepts represents which fields are included in the response, and the data type
 
-         input:    input字段多用与请求数据段，即body部分，当前支持 ImageBodyField, StringBodyField, 和AudioBodyField
+         input:   The input field is mostly used with the request data segment, that is, the body part. Currently, ImageBodyField, StringBodyField, and AudioBodyField are supported.
          '''
          accept1 = StringBodyField(key="ouput_text")
       ```
-   - 实例化用户请求和用户响应对象
+   - Instantiate user request and user response objects
       ```python
       class Wrapper(WrapperBase):
-         # 实例化用户请求类和用户响应类
+         # Instantiate user request class and user response class
          requestCls = UserRequest()
          responseCls = UserResponse()
          ......
       ```
-   - 声明`main`函数，实例化`Wrapper`对象，运行程序
+   - Declare the `main` function, instantiate the `Wrapper` object and run the program
       ```python
       if __name__ == '__main__':
          m = Wrapper()
@@ -294,18 +288,18 @@ Python Language Wrapper:
       ```
 
 ### Appendix
--  安装和更新
+-  Install and update
 
-   使用`pip`指令完成`aiges`库的安装和更新
+   Install and update the `aiges` library using the `pip` command
    ```python
-   # 安装aiges
+   # install aiges
    pip install aiges -i https://pypi.python.org/simple
-   # 更新aiges
+   # update aiges
    pip install --upgrade aiges -i https://pypi.python.org/simple
    ```
 
-- 在执行的过程中，错误需要**尽可能早**捕获，错误码也要和第三方平台区别开来，即使是默认的HTTP错误码也要有辨别也好，方便定位错误。
+- During the execution process, errors need to be caught **as early as possible**, and error codes should be distinguished from third-party platforms. Even the default HTTP error codes should be identified, which is convenient for locating errors.
 
-- 调用三方API的Python加载器插件[完整实现可以参考](https://github.com/xfyun/aiges/tree/master/demo/music_api_v2)
+- Python loader plugin that calls the third-party API [for complete implementation, please refer to] (https://github.com/xfyun/aiges/tree/master/demo/music_api_v2)
 
 

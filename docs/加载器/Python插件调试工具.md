@@ -1,6 +1,6 @@
 ---
 sidebar_position: 4
-sidebar_label: Python调试工具
+sidebar_label: Python Debugging
 
 ---
 

@@ -1,0 +1,22 @@
+{
+    "sidebar.docSidebar.category.Quick Start": {
+      "message": "快速开始",
+      "description": "The label for category Getting Started in sidebar docSidebar"
+    },
+    "sidebar.docSidebar.category.Loader": {
+      "message": "加载器",
+      "description": "The label for category CLI in sidebar docSidebar"
+    },
+    "sidebar.docSidebar.category.Configuration Center": {
+      "message": "配置中心",
+      "description": "The label for category Developers in sidebar docSidebar"
+    },
+    "sidebar.docSidebar.category.Release Plan": {
+      "message": "版本计划",
+      "description": "The label for category AI Applications in sidebar docSidebar"
+    },
+    "sidebar.docSidebar.category.Business Image Construction Process": {
+      "message": "业务镜像构建流程",
+      "description": "The label for category Examples in sidebar docSidebar"
+    }
+  }

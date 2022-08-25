@@ -1,30 +1,26 @@
 ---
 sidebar_position: 2
-sidebar_label: 从sealos完整安装
+sidebar_label: Install Service With Sealos
 ---
 # AthenaServing Framework (ASF)
 
 ## Vision
 
-给任何有需要使用AI能力的场景，提供一致的工程化管理AI能力的方案。任何领域的AI场景的用户，都可以快速的将其算法模型落地成统一标准的HTTP API服务。
+Provide a consistent solution for engineering management of AI capabilities for any scenario that requires the use of AI capabilities. Users of AI scenarios in any field can quickly implement their algorithm models into a unified standard HTTP API service.
 
-## 框架介绍
+## Framework Introduction
 
-`AthenaServing Framework(下简称ASF)` AI推理服务框架依托科大讯飞多年的AI算法引擎云服务化经验及云原生的不断探索实践,不仅可以满足引擎云服务化后,服务的稳定性,也可以通过`ASF`
-享受到相关云原生组件的方便与快捷。AI算法引擎开发者可以专注于算法的演进与研究,无需分心进行硬件资源的管理及云服务化的诸多开发运维工作。
+`AthenaServing Framework (ASF)` AI inference service framework relies on iFLYTEK's years of experience in cloud service of AI algorithm engine and continuous exploration and practice of cloud native. `ASF` enjoys the convenience and speed of related cloud-native components. AI algorithm engine developers can focus on the evolution and research of the algorithm, and do not need to be distracted in the management of hardware resources and the development and operation of cloud services.
 
-`ASF`是一个专为AI能力开发者打造的AI算法引擎的无服务全托管式平台框架，您可以通过集成 `ASF`
-中提供的插件，快速的部署AI算法引擎，并使用网络、分发策略、数据处理等配套辅助系统。引擎托管平台致力于加速AI算法引擎云服务化，并借助云原生架构，为云服务的稳定提供多重保障，您无需关注底层基础设施及服务化相关的开发、治理和运维，即可高效、安全对引擎进行部署、升级、扩缩、运营和监控。
+`ASF` is a serverless and fully managed platform framework for AI algorithm engine specially designed for AI capability developers. You can quickly deploy the AI algorithm engine by integrating the plug-ins provided in `ASF`, and use network and distribution strategies , data processing and other supporting auxiliary systems. The engine hosting platform is committed to accelerating the cloud service of AI algorithm engines, and provides multiple guarantees for the stability of cloud services with the help of cloud native architecture. Deploy, upgrade, scale, operate, and monitor engines securely.
 
-目前部署 `ASF` 需要开发者掌握一定的K8s、helm 等相关知识，且安装部署依赖在线镜像仓库和 helm repo，在离线环境、各式各样的操作系统部署的需求面前有些乏力，sealos 以其`集群镜像`、`images-shim`
-等方案让应用可以让离线部署变得非常丝滑，无需任何额外操作，sealos 支持了 `ASF` 集群镜像后，让任何人在任何场景、任何环境无障碍交付 `ASF` , 仅需一条命令即可拉起一个 `ASF` 环境。用户可以在 `ASF`
-框架上集中部署自己的AI能力，对外提供HTTP API。
+At present, the deployment of `ASF` requires developers to master a certain knowledge of K8s, helm, etc., and the installation and deployment depends on the online mirror warehouse and helm repo, which is somewhat weak in the face of offline environment and various operating system deployment requirements. `Cluster mirror`, `images-shim` and other solutions allow applications to make offline deployment very smooth without any additional operations. After sealos supports `ASF` cluster mirroring, anyone can work in any scene and in any environment. Delivers `ASF` that pulls up an `ASF` environment with just one command. Users can centrally deploy their AI capabilities on the `ASF` framework and provide HTTP APIs to the outside world.
 
-## AIGES是什么
+## What is AIGES
 
-`AIGES` 是  `ASF`核心的组件，中文名称加载器。主要负责将用户的推理代码(按照既定标准)转换成 grpc/http 服务
+`AIGES` is the core component of `ASF`, the Chinese name loader. Mainly responsible for converting the user's reasoning code (according to established standards) into grpc/http services.
 
-* AIGES 与 Language Wrapper
+* AIGES and Language Wrapper
 
 - C/C++ Wrapper
   ![](imgs/c++.png)
@@ -32,45 +28,45 @@ sidebar_label: 从sealos完整安装
 - Python Wrapper
   ![](imgs/python.png)
 
-## 面向场景
+## Scenario-oriented
 
-AI能力最终需要落地工程化，部分企业缺乏统一标准的AI工程化方案。
+AI capabilities ultimately need to be implemented into engineering, and some companies lack a unified standard AI engineering solution.
 
-## 解决问题
+## Solve the problem
 
-* AI能力服务化多，无标准
-* AI能力服务上线，服务化过程存在大量冗余工作
-* 无AI工程化团队
-* 无最终标准服务协议
+* There are many AI capabilities, no standard
+* The AI capability service is online, and there is a lot of redundant work in the service process
+* No AI engineering team
+* No final standard service agreement
 
-## 特性
+## Features
 
-* 基于GRPC优化后的XRPC框架
-* 统一标准服务协议定义
-* 千亿PV流量打磨
-* 支持多种负载均衡策略
-* 新增支持Python代码推理
-* ...
+* Optimized XRPC framework based on GRPC
+* Definition of unified standard service agreement
+* Hundred billions of PV traffic polishing
+* Support multiple load balancing strategies
+* Add support for Python code inference
+*...
 
-## 框架架构
+## Framework Architecture
 
 ![img](https://github.com/iflytek/proposals/blob/main/athenaloader/athena.png?raw=true)
 
-## 框架安装
+## Framework installation
 
-### 前置条件
+### Precondition
 
-准备一台测试机(4c8G),硬盘>=20G即可
+Prepare a test machine (4c8G), hard disk >=20G
 
-### 安装
+### Install
 
-1. 安装sealos.4.0
+1. Install sealos.4.0
 
 ```shell
 $ wget -c https://sealyun-home.oss-cn-beijing.aliyuncs.com/sealos-4.0/latest/sealos-amd64 -O sealos &&  chmod +x sealos && mv sealos /usr/bin
 ```
 
-2. 创建集群
+2. Create a cluster
 
 ```shell
 $ sealos run labring/kubernetes:v1.19.16 labring/calico:v3.22.1   --masters 192.168.64.2 -p <password>
@@ -97,13 +93,9 @@ $ sealos run labring/openebs:v1.9.0
 $ sealos run registry.cn-qingdao.aliyuncs.com/labring/athenaserving:v2.0.0rc1
 ```
 
-3. HTTP 调用AI demo能力 MMOCR能力
+3. HTTP call AI demo capability MMOCR capability
 
-MMOCR 是基于PyTorch 和mmdetection 的开源工具箱，专注于文本检测，文本识别以及相应的下游任务，如关键信息提取。 它是OpenMMLab
-项目的一部分。[项目地址](https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md)
-在[wrapper.py](https://github.com/iflytek/aiges/blob/master/demo/mmocr/wrapper/wrapper_v2.py)
-中，我们使用python轻而易举的将 [文本+检测识别能力](https://mmocr.readthedocs.io/zh_CN/latest/demo.html#id4)封装成为一个可部署到 `ASF`中部署成为HTTP API的能力。
-使用Sealos 部署完 `ASF` 后， 您可以使用如下脚本， 修改其中的`url`值，即可完成调用 `MMOCR(文本+检测)`AI能力。
+MMOCR is an open source toolbox based on PyTorch and mmdetection, focusing on text detection, text recognition and corresponding downstream tasks such as key information extraction. It is part of the OpenMMLab project. [Project address](https://github.com/open-mmlab/mmocr/blob/main/README_zh-CN.md) in [wrapper.py](https://github.com/iflytek/aiges/blob/ master/demo/mmocr/wrapper/wrapper_v2.py), we use python to easily encapsulate [text + detection and recognition ability](https://mmocr.readthedocs.io/zh_CN/latest/demo.html#id4) into A capability that can be deployed into `ASF` as an HTTP API. After deploying `ASF` using Sealos, you can use the following script to modify the `url` value to complete the call to the `MMOCR (text + detection)` AI capability.
 
 ```python
 import requests
@@ -173,16 +165,13 @@ for box in result[0].get("result"):
     print(msg.format(**box))
 ```
 
-***调用以及结果***
+***Call and return result***
 
 ```bash
 cd /var/lib/sealos/data/default/rootfs/athenaserving/charts/mmocr_ase
-# 修改 demo.py中的 url部分为 nodeIP
+# Modify the url part in demo.py to nodeIP
 python3 demo.py
 ```
-
-调用结返回:
-
 ```bash
 200
 HTTP API response is : [{'filename': '0', 'result': [{'box': [190, 37, 253, 31, 254, 46, 191, 52], 'box_score': 0.9566415548324585, 'text': 'nboroughofs', 'text_score': 1.0}, {'box': [253, 47, 257, 36, 287, 47, 282, 58], 'box_score': 0.9649642705917358, 'text': 'fsouthw', 'text_score': 1.0}, {'box': [157, 59, 188, 41, 194, 52, 163, 70], 'box_score': 0.9521175622940063, 'text': 'londond', 'text_score': 0.9897959183673469}, {'box': [280, 58, 286, 50, 306, 67, 300, 74], 'box_score': 0.9397556781768799, 'text': 'thwark', 'text_score': 1.0}, {'box': [252, 78, 295, 78, 295, 98, 252, 98], 'box_score': 0.9694718718528748, 'text': 'hill', 'text_score': 1.0}, {'box': [165, 78, 247, 78, 247, 99, 165, 99], 'box_score': 0.9548642039299011, 'text': 'octavia', 'text_score': 1.0}, {'box': [164, 105, 215, 103, 216, 121, 165, 123], 'box_score': 0.9806956052780151, 'text': 'social', 'text_score': 1.0}, {'box': [219, 104, 294, 104, 294, 122, 219, 122], 'box_score': 0.9688025116920471, 'text': 'reformer', 'text_score': 1.0}, {'box': [150, 124, 226, 124, 226, 141, 150, 141], 'box_score': 0.9752051830291748, 'text': 'established', 'text_score': 1.0}, {'box': [229, 124, 255, 124, 255, 140, 229, 140], 'box_score': 0.94972825050354, 'text': 'this', 'text_score': 1.0}, {'box': [259, 125, 305, 123, 306, 139, 260, 142], 'box_score': 0.9752089977264404, 'text': 'garden', 'text_score': 1.1666666666666667}, {'box': [166, 142, 193, 141, 194, 156, 167, 157], 'box_score': 0.9731062650680542, 'text': 'hall', 'text_score': 1.0}, {'box': [198, 142, 223, 142, 223, 156, 198, 156], 'box_score': 0.9548938870429993, 'text': 'and', 'text_score': 1.0}, {'box': [228, 144, 286, 144, 286, 159, 228, 159], 'box_score': 0.977089524269104, 'text': 'cottages', 'text_score': 1.25}, {'box': [180, 158, 205, 158, 205, 172, 180, 172], 'box_score': 0.9400062561035156, 'text': 'and', 'text_score': 1.0}, {'box': [210, 160, 279, 158, 279, 172, 210, 174], 'box_score': 0.9543584585189819, 'text': 'pioneered', 'text_score': 1.0}, {'box': [226, 176, 277, 176, 277, 188, 226, 188], 'box_score': 0.9748533964157104, 'text': 'cadets', 'text_score': 1.0}, {'box': [183, 177, 223, 177, 223, 189, 183, 189], 'box_score': 0.9633153676986694, 'text': 'army', 'text_score': 1.0}, {'box': [201, 190, 235, 190, 235, 204, 201, 204], 'box_score': 0.9714152216911316, 'text': '1887', 'text_score': 1.25}, {'box': [175, 213, 180, 201, 211, 212, 206, 225], 'box_score': 0.9704344868659973, 'text': 'vted', 'text_score': 0.9191176470588236}, {'box': [241, 213, 278, 200, 283, 213, 246, 227], 'box_score': 0.9607459902763367, 'text': 'epeople', 'text_score': 1.0}, {'box': [208, 224, 210, 212, 223, 214, 220, 227], 'box_score': 0.9337806701660156, 'text': 'by', 'text_score': 1.0}, {'box': [223, 214, 240, 214, 240, 226, 223, 226], 'box_score': 0.969144344329834, 'text': 'the', 'text_score': 1.0}]}]
@@ -212,18 +201,18 @@ MMocr Result: box located at [208, 224, 210, 212, 223, 214, 220, 227], box score
 MMocr Result: box located at [223, 214, 240, 214, 240, 226, 223, 226], box score is 0.969144344329834.  Detected text is the , text  score is 1.0...
 ```
 
-## 集成接入您的自定义AI能力
+## Integrate access to your custom AI capabilities
 
-新的AI能力，需要您按照加载器规范，开发并构建出您的 AI能力镜像，之后即可部署到集群。
+For new AI capabilities, you need to develop and build your AI capability image according to the loader specification, and then deploy it to the cluster.
 
-如何构建您的自定义AI能力镜像，请参考: [快速构建wrapper.py](https://iflytek.github.io/athena_website/docs/%E5%8A%A0%E8%BD%BD%E5%99%A8/Python%E6%8F%92%E4%BB%B6)
+How to build your custom AI capability image, please refer to: [Quick build wrapper.py](https://iflytek.github.io/athena_website/docs/%E5%8A%A0%E8%BD%BD%E5%99%A8/Python%E6%8F%92%E4%BB%B6)
 
-## 更多详细内容
+## more details
 
-* 关注:
+* focus on:
 
 [![ifly](https://avatars.githubusercontent.com/u/26786495?s=96&v=4)](https://github.com/iflytek)
 
-* 联系:
+* contact:
 
 ![weixin](https://raw.githubusercontent.com/berlinsaint/readme/main/weixin_ybyang.jpg)

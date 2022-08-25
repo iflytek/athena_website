@@ -1,7 +1,9 @@
 ---
 sidebar_position: 1
-sidebar_label: 介绍
+sidebar_label: Introduce
 ---
+# Introduce
+
 ![](img/polaris-w.png)
 
 ## Core functions

@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
-sidebar_label: 一、安装aiges sdk
+sidebar_label: 1、Install Aiges SDK
 ---
-# aiges sdk tool library
+# Aiges SDK
 
 ## background
 

@@ -1,7 +1,9 @@
 ---
 sidebar_position: 2
-sidebar_label: 部署文档
+sidebar_label: Deployment Documentation
 ---
+# Deployment Documentation
+
 ## Polaris Deployment documentation (to be modified)
 
 ### Introduction

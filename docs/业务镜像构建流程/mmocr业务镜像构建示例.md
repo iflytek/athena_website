@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 ---
-# MMOCR business image construction
+# MMOCR Business Image Construction
 
 > By combining the mmocr service with the aiges inference service framework, the rapid implementation of service inference is realized.
 
