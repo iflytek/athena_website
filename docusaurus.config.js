@@ -76,7 +76,7 @@ const config = {
             type: 'doc',
             docId: '概览',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {
             type: 'localeDropdown',
