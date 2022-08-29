@@ -1,5 +1,5 @@
 ---
-slug: git 学习
+slug: git
 title: 参与开源的那些事？
 authors: sea-wyq
 tags: [git]
