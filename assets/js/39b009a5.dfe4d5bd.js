@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkathenaserving=self.webpackChunkathenaserving||[]).push([[7328],{9797:e=>{e.exports=JSON.parse('{"label":"pybind11","permalink":"/athena_website/blog/tags/pybind-11","allTagsPath":"/athena_website/blog/tags","count":2}')}}]);
