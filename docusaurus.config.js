@@ -34,13 +34,21 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          // lastVersion: 'current',
-          // versions: {
-          //   current: {
-          //   label: 'next',
-          //   path: 'current',
-          //   },
-          // },
+          lastVersion: 'current',
+          versions: {
+            current: {
+            label: '最新版本(unreleased)',
+            path: 'current',
+            },
+            "2.2.0": {
+              label: 'release-2.2.0',
+              path: '2.2.0',
+              },
+            "2.1.0": {
+              label: 'release-2.1.0',
+              path: '2.1.0',
+              },
+          },
           path: "docs",
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -79,7 +87,9 @@ const config = {
             docId: '概览',
             position: 'left',
             label: 'Docs',
+            activeBasePath: "docs/current"
           },
+
           {
             type: 'localeDropdown',
             position: 'right',
@@ -94,12 +104,12 @@ const config = {
               },
             ],
           },
-        // {
-        //   type: 'docsVersionDropdown',
-        //   position: 'right',
-        //   dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-        //   dropdownActiveClassDisabled: true,
-        // },
+        {
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          dropdownActiveClassDisabled: true,
+        },
           {to: '/blog', label: 'Blog', position: 'left'},
           {
             href: 'https://github.com/iflytek/aiges',
@@ -116,7 +126,7 @@ const config = {
             items: [
               {
                 label: 'Docs',
-                to: '/docs/概览',
+                to: '/docs/current/概览',
               },
             ],
           },
