@@ -304,6 +304,6 @@ The biggest change in the new version of the Python loader plugin is the introdu
 
 - During the execution process, errors need to be caught **as early as possible**, and error codes should be distinguished from third-party platforms. Even the default HTTP error codes should be identified, which is convenient for locating errors.
 
-- Python loader plugin that calls the third-party API [for complete implementation, please refer to] (https://github.com/xfyun/aiges/tree/master/demo/music_api_v2)
+- Python loader plugin that calls the third-party API [for complete implementation, please refer to] (https://github.com/iflytek/aiges_demo/blob/main/music_api/wrapper_v2.py)
 
 

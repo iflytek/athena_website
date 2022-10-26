@@ -309,6 +309,6 @@ Python Language Wrapper:
 
 - 在执行的过程中，错误需要**尽可能早**捕获，错误码也要和第三方平台区别开来，即使是默认的HTTP错误码也要有辨别也好，方便定位错误。
 
-- 调用三方API的Python加载器插件[完整实现可以参考](https://github.com/xfyun/aiges/tree/master/demo/music_api_v2)
+- 调用三方API的Python加载器插件[完整实现可以参考](https://github.com/iflytek/aiges_demo/blob/main/music_api/wrapper_v2.py)
 
 
