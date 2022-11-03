@@ -33,6 +33,8 @@ Python Language Wrapper:
 
 5. 尽可能简化用户输入，并且在有限的用户输入下，获取平台需要的信息。
 
+6. 尽可能提升python能力的推理效率和性能。
+
 ## wrapper.py 新设计
 
 ![img_1.png](img_1.png)
@@ -41,6 +43,9 @@ Python Language Wrapper:
 2. [为什么?](#为什么) 新wrapper要求用户 实现 `Wrapper` 类，并将原有 函数式 wrapper开头的函数放入到 `Wrapper` （类方法|对象方法？待讨论 todo)中去。用户实现的`Wrapper`类必须**继承**`WrapperBase`类，并且`wrapperInit`、`wrapperFini`、`wrapperOnceExec`和`wrapperError`等函数在`WrapperBase`类被声明为类方法`@classmethod`，未实现则会抛出`NotImplementedError`错误。
 
 3. 用户在Wrapper类中除了要实现原有的`wrapperInit`、`WrapperExec`等实现之外，需要额外定义能力的输入和输出，最终生成的HTTP接口基于此信息生成。
+
+4. 将用户的请求响应对象转为实现Buffer protocol的对象，然后使用memoryview建立视图来减少内存数据的copy,增加wrapper.py的推理效率。
+
 
 ### 为什么
 

@@ -32,6 +32,8 @@ Python Language Wrapper:
 
 5. Simplify user input as much as possible, and obtain the information required by the platform under limited user input.
 
+6. Improve the inference efficiency and performance of Python capabilities as much as possible.
+
 ## wrapper.py new design
 
 1. Provide python sdk: The python sdk will be released to pypi, which is convenient for users to install and update at any time.
@@ -39,6 +41,8 @@ Python Language Wrapper:
 2. [Why?](#Why) The new wrapper requires users to implement the `Wrapper` class, and put the functions at the beginning of the original functional wrapper into the `Wrapper` (class method | object method? Todo). The `Wrapper` class implemented by the user must **inherit** the `WrapperBase` class, and the functions `wrapperInit`, `wrapperFini`, `wrapperOnceExec` and `wrapperError` are declared as class methods `@classmethod` in the `WrapperBase` class , if not implemented, `NotImplementedError` will be thrown.
 
 3. In addition to implementing the original `wrapperInit`, `WrapperExec` and other implementations in the Wrapper class, users need to define additional input and output capabilities. The final generated HTTP interface is generated based on this information.
+
+4. Turn the user's request response object into an object that implements the Buffer protocol, and then use memoryview to build a view to reduce the copy of memory data and increase the inference efficiency of wrapper.py.
 
 ### Why?
 
