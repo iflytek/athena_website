@@ -7,16 +7,28 @@ sidebar_label: Python插件
 
 ## :star:Python加载器插件文档 
 
+*** 上新!!!新增 GRPC模式，区别于之前的CGO调用Wrapper方式*** 
 
-Python Language Wrapper:
+
+Python Language Wrapper CGo模式:
+
 ![img](python.png)
+
+Python Language Wrapper GRPC模式:
+
+![img](python-rpc.png)
+
+[👉👉👉快速查看](Grpc_wrapper/Python安装sdk)
+
 
 ## 背景
 
 1. 之前的wrapper.py 由[C项目](https://github.com/xfyun/aiges_c_python_wrapper)
    实现了 [wrapper接口](https://github.com/xfyun/aiges_c_python_wrapper/blob/master/include/aiges/wrapper.h)实现。
 
-   **aiges_c_python_wrapper**编译成`libwrapper.so`，由aiges统一加载。
+   CGO 模式下:  **aiges_c_python_wrapper**编译成`libwrapper.so`，由aiges统一加载。
+   Grpc 模式下: aiges 和 python wrapper.py之间使用grpc通信
+   
 2. 之前如果python用户需要实现推理插件， 只需要参考 [wrapper.py](https://github.com/xfyun/aiges/blob/master/demo/mmocr/wrapper.py)实现对应接口后，即可实现python推理。
 
 3. 当用户实现`wrapper.py`后， 无法直接调试运行，且不太了解`aiges`如何调用`wrapper.py`以及传递到 `wrapper.py`对应的参数是什么类型都非常疑惑，造成python版本的AI推理插件集成方式并不那么pythonic。

@@ -1,5 +1,5 @@
 {
-  "label": "Create Wrapper",
+  "label": "Create Cgo Wrapper",
   "position": 5,
   "link": {
     "type": "generated-index"
