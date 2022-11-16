@@ -16,7 +16,7 @@ python 版本请选用 3.9+ [也可以下载我们的docker镜像](https://githu
 ## 1. 下载加载器 
 
 
-1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0-alpha4/aiges_3.0-alpha4_linux_amd64.tar.gz```
+1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0-alpha6/aiges_3.0-alpha6_linux_amd64.tar.gz```
 
 
 ## 初始化 python wrapper 项目
@@ -43,7 +43,7 @@ mnist/
 
 ### 3. 解压加载器 (后续这一步会做到 上述初始化sdk中去，暂时需要手动)
 
-```tar zxvf aiges_3.0-alpha4_linux_amd64.tar.gz -C mnist ```
+```tar zxvf aiges_3.0-alpha6_linux_amd64.tar.gz -C mnist ```
 
 此时项目结构如下
 
@@ -263,6 +263,10 @@ aiService.Init: init success!
     }
 }
 ```
+
+### 6. swagger. 
+
+
 
 
 
