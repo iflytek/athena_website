@@ -4,16 +4,24 @@ sidebar_label: 一、Mnist完整示例
 ---
 
 
-## 0. 装sdk
+## 准备环境
 
 python 版本请选用 3.9+ [也可以下载我们的docker镜像](https://github.com/iflytek/aiges/releases/tag/v3.0-alpha11)
 
+如下流程可在容器环境中进行 (无需gpu):
+
+```bash
+docker run -itd --name mnist2 -p 1889:1888 public.ecr.aws/iflytek-open/aiges-gpu:10.1-1.17-3.9.13-ubuntu1804-v3.0-alpha11 bash
+```
+
+您也可以自己准备环境， 直接下载二进制在您自己的任何环境上运行aiges.
 
 
+### 0. 装sdk
 ``` pip3 install aiges==0.5.0  -i https://pypi.python.org/simple```
 
 
-## 1. 下载加载器 
+### 1. 下载加载器 
 
 
 1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0-alpha11/aiges_3.0-alpha11_linux_amd64.tar.gz```
@@ -223,9 +231,7 @@ aiService.Init: init success!
 
 ### 5. Postman调试
 
-
 * api地址: http://youIP:1888/v1/svcName
-
 
 * post方式请求: body 部分
 
@@ -297,7 +303,7 @@ aiService.Init: init success!
 
 ![img](../swagger.jpg)
 
-Try it out !
+Try it out ! 可以复制上述 postman部分的 body进行请求。
 
 ![img2](../swagger2.jpg.png)
 
