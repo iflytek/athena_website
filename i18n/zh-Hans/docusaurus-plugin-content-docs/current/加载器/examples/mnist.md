@@ -6,17 +6,17 @@ sidebar_label: 一、Mnist完整示例
 
 ## 0. 装sdk
 
-python 版本请选用 3.9+ [也可以下载我们的docker镜像](https://github.com/iflytek/aiges/releases/tag/v3.0-alpha4)
+python 版本请选用 3.9+ [也可以下载我们的docker镜像](https://github.com/iflytek/aiges/releases/tag/v3.0-alpha11)
 
 
 
-``` pip3 install aiges==0.5.3.dev0  -i https://pypi.python.org/simple```
+``` pip3 install aiges==0.5.0  -i https://pypi.python.org/simple```
 
 
 ## 1. 下载加载器 
 
 
-1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0-alpha9/aiges_3.0-alpha9_linux_amd64.tar.gz```
+1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0-alpha11/aiges_3.0-alpha11_linux_amd64.tar.gz```
 
 
 ## 初始化 python wrapper 项目
@@ -41,9 +41,21 @@ mnist/
     └── wrapper.py
 ```
 
-### 3. 解压加载器 (后续这一步会做到 上述初始化sdk中去，暂时需要手动)
+### 3. 解压加载器 
+```tar zxvf aiges_3.0-alpha11_linux_amd64.tar.gz -C mnist ```
 
-```tar zxvf aiges_3.0-alpha9_linux_amd64.tar.gz -C mnist ```
+首次执行: 
+
+```bash
+root@505a3a0e670c:/home/aiges# ./AIservice
+加载器运行方法:
+- 本地模式运行
+1: ./AIservice -init  , 初始化配置文件 aiges.toml (若存在，则不会替换)
+2: ./AIservice -m=0 , 仅用于本地模式运行
+3: ./AIservice -mnist , 下载mnistdemo
+- 配置中心模式 (开源计划删除)
+- 更多参数选项: 请执行 ./AIservice -h
+```
 
 此时项目结构如下
 
@@ -74,9 +86,11 @@ mnist/
 顺序执行如下:
 
 *  ``` export AIGES_PLUGIN_MODE=python```
-* ./AIservice -init  【当前版本执行会出错，但不影响， 会在当前目录下生成一个 aiges.toml】
+*  ```./AIservice -init```  【会在当前目录下生成一个 aiges.toml】
 
-* ```./AIservice -m 0 -c aiges.toml  -s svcName ``` 启动引擎，此时结果如下:【注意svcName必须和aiges 的section对应,当前默认就是 svcName】
+* ```./AIservice -m 0 -c aiges.toml  -s svcName ``` 
+
+启动引擎，此时结果如下:【注意svcName必须和aiges 的section对应,当前默认就是 svcName】
 
 ```bash
 root@012d31456c50:/home/aiges/mnist# ./AIservice -m 0 -c aiges.toml  -s svcName
@@ -109,20 +123,27 @@ header pass list: []
 2022/11/15 18:22:02 grpc.go:20: Call WrapperInit Failed...ret: 30001
 ```
 
-这是因为我们的 wrapper还未配置好
+这是因为我们的 wrapper还未准备好
 
 #### 5. 编写推理逻辑wrapper，以mnist项目为例
 
 下载 mnist demo:
+* ``` ./AIservice -mnist```
 
-* ```git clone https://github.com/iflytek/aiges_demo.git```
+默认会下载 ` https://github.com/iflytek/aiges_demo.git` 项目,并解压到当前目录 `aiges_demo`
 
-删除 当前mnist下wrapper目录，替换上述的demo
+如果此命令长时间没有反应，可能是因为GFW问题， 可手动下载 ```https://github.com/iflytek/aiges_demo/archive/refs/tags/v1.0.0.zip```
 
-* ``` rm -r mnist/wrapper```
-* ``` cp -ra aiges_demo/mnist/wrapper/  mnist/ ```
+unzip 解压到当 aiges_demo目录中即可【注意手动解压可能嵌套了一层 aiges_demo_1.0.0目录】。
+
+
+删除 当前mnist下默认生成的wrapper目录，替换上述的demo
+
+* ``` rm -r wrapper```
+* ``` cp -ra aiges_demo/mnist/wrapper/  ./ ```
 * ``` cp -ra aiges_demo/mnist/requirements.txt mnist/```
 * ``` pip install -r requirements.txt```
+* ``` export AIGES_PLUGIN_MODE=python``
 * ``` export PYTHONPATH=/home/aiges/mnist/wrapper```
 * ``` 再次运行引擎  ./AIservice -m 0 -c aiges.toml  -s svcName```
 
@@ -270,13 +291,23 @@ aiService.Init: init success!
 
 启动后访问:
 
-```http://<yourip>:1888`
+```http://<yourip>:1888```
 
+如下图:
 
+![img](../swagger.jpg)
+
+Try it out !
+
+![img2](../swagger2.jpg.png)
+
+可以看到识别结果返回
 
 *  至此，单独的aiges加载器完成基本运行
 
+
 由于alpha 是裁剪后，并刚刚合并了 http接口部分，很多功能还不完善，但是基本可以托管能力
+
 
 目前已知问题:
 
