@@ -6,12 +6,12 @@ sidebar_label: 一、Mnist完整示例
 
 ## 准备环境
 
-python 版本请选用 3.9+ [也可以下载我们的docker镜像](https://github.com/iflytek/aiges/releases/tag/v3.0-alpha11)
+python 版本请选用 3.9+ [也可以下载我们的docker镜像](https://github.com/iflytek/aiges/releases/tag/v3.0.2)
 
 如下流程可在容器环境中进行 (无需gpu):
 
 ```bash
-docker run -itd --name mnist2 -p 1889:1888 public.ecr.aws/iflytek-open/aiges-gpu:10.1-1.17-3.9.13-ubuntu1804-v3.0-alpha11 bash
+docker run -itd --name mnist2 -p 1889:1888 iflyopensource/aiges-gpu:11.2-1.17-3.9.13-ubuntu1804-v3.0.2 bash
 ```
 
 您也可以自己准备环境， 直接下载二进制在您自己的任何环境上运行aiges.
@@ -24,7 +24,7 @@ docker run -itd --name mnist2 -p 1889:1888 public.ecr.aws/iflytek-open/aiges-gpu
 ### 1. 下载加载器 
 
 
-1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0-alpha11/aiges_3.0-alpha11_linux_amd64.tar.gz```
+1. ```wget https://github.com/iflytek/aiges/releases/download/v3.0.1/aiges_3.0.1_linux_amd64.tar.gz```
 
 
 ## 初始化 python wrapper 项目
@@ -140,9 +140,9 @@ header pass list: []
 
 默认会下载 ` https://github.com/iflytek/aiges_demo.git` 项目,并解压到当前目录 `aiges_demo`
 
-如果此命令长时间没有反应，可能是因为GFW问题， 可手动下载 ```https://github.com/iflytek/aiges_demo/archive/refs/tags/v1.0.0.zip```
+如果此命令长时间没有反应，可能是因为GFW问题， 可手动下载 ```https://github.com/iflytek/aiges_demo/archive/refs/heads/main.zip```
 
-unzip 解压到当 aiges_demo目录中即可【注意手动解压可能嵌套了一层 aiges_demo_1.0.0目录】。
+unzip 解压到当 aiges_demo目录中即可【注意手动解压可能嵌套了一层 aiges_demo_main目录】。
 
 
 删除 当前mnist下默认生成的wrapper目录，替换上述的demo
