@@ -7,12 +7,12 @@ sidebar_label: 一、Mnist example
 ## 0. install sdk
 
 please use python3.9+
-
+(本示例建议用python3.9，如果是最新的python版本，可能没有对应的torch包)
 or you can choose[docker base image](https://github.com/iflytek/aiges/releases/tag/v3.0-alpha4)
 
 
 
-``` pip3 install aiges==0.5.3.dev0  -i https://pypi.python.org/simple```
+``` pip3 install aiges==0.7.2  -i https://pypi.python.org/simple```
 
 
 ## 1. download aiges
