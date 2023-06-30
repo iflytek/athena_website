@@ -34,19 +34,19 @@ NODE_MIRROR=http://npm.taobao.org/mirrors/node n 16.14
 
 - 恭喜！你已成功使用 `**n**` 工具安装了 Node.js 16.14.2 版本，并附带安装了 npm xxx(原始版本），则安装成功。
 
-注意：
+**注意：**
 
 ```bash
 node -v  #还是原始版本，并不是16.14.2
 ```
 
-通过下面命令即可切换到新版本：
+- 通过下面命令即可切换到新版本：
 
 ```bash
 hash -r
 ```
 
-下面就是部署webpage的安装命令：
+- 下面就是部署webpage的安装命令：
 
 ```bash
 yarn
@@ -55,6 +55,6 @@ yarn build
 USE_SSH=true yarn deploy
 ```
 
-最后，输出下面的页面则部署成功
+- 最后，输出下面的页面则部署成功
+![Image text](https://github.com/Jonyzqw/athena_website/blob/master/figure/webpage.png)
 
-![webpage](./figure/webpage.png)
