@@ -9,11 +9,10 @@ python 版本请选用 3.9+（[也可以下载我们的docker镜像](https://git
     pip install aiges --force -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 # 3. 利用wegt下载加载器
-- version_latest = $(curl -s "https://api.github.com/repos/iflytek/aiges/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+- version_latest = $(curl -s "https://api.github.com/repos/iflytek/aiges/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
 - 获取最新版本的下载链接url
--  wegt https://github.com/iflytek/aiges/releases/download/$version_latest/aiges_$version_latest_linux_amd64.tar.gz
--  如果wegt下载超时，可以改用axel https://github.com/iflytek/aiges/releases/download/$version_latest/aiges_$version_latest_linux_amd64.tar.gz
-    
+-  wegt https://github.com/iflytek/aiges/releases/download/v$version_latest/aiges_$version_latest_linux_amd64.tar.gz
+-  如果wegt下载超时，可以改用axel https://github.com/iflytek/aiges/releases/download/v$version_latest/aiges_$version_latest_linux_amd64.tar.gz
 
 # 4. 初始化 python wrapper 项目
 ## 4.1. 通过aiges创建一个名为mnist的项目
@@ -30,7 +29,7 @@ python 版本请选用 3.9+（[也可以下载我们的docker镜像](https://git
         └── wrapper.py
 
 ## 4.3. 解压加载器
-    - version_latest = $(curl -s "https://api.github.com/repos/iflytek/aiges/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    - version_latest = $(curl -s "https://api.github.com/repos/iflytek/aiges/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
     - tar zxvf aiges_$version_latest_linux_amd64.tar.gz -C mnist
 
 # 5. 编写推理逻辑wrapper，以mnist项目为例
